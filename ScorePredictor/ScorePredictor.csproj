@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppController.cs" />
+    <Compile Include="Badges.cs" />
     <Compile Include="Fixture.cs" />
     <Compile Include="FixtureBox.cs">
       <SubType>Form</SubType>
@@ -90,6 +91,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -103,6 +105,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ARS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\AST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\BUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\CHE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\CRY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\EVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\HUL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icon2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\LEI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\LIV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\MNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\MNU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\NWC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\QPR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\SOU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\STO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\SUN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\SWA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\TOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\WBA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\WHU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\BOU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\NOR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\WAT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

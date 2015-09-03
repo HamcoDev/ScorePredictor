@@ -12,6 +12,8 @@ namespace ScorePredictor
 {
     public partial class MainForm : Form
     {
+        private AppController app = new AppController();
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,7 +22,14 @@ namespace ScorePredictor
         private void fixturesButton_Click(object sender, EventArgs e)
         {
             mainPanel.Hide();
-
+            app.getFixtures();
         }
+
+        public static void displayMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
     }
+
 }

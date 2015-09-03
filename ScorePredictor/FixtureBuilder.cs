@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using System.Linq;
 using System.Xml.Linq;
@@ -18,14 +19,14 @@ namespace ScorePredictor
 
         public List<Fixture> getFixtures()
         {
-            var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/SamH.php");
+            //var client = new WebClient();
+            //var reply = client.DownloadString("http://cgtipster.com/api2/PYBFixtures.php");
 
-            //Dim fileReader As String
-            //fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\hamptons\Google Drive\PlaceYourBets\JSONexample - fixtures.txt")
-            //Dim f = JsonConvert.DeserializeObject(Of FixtureList)(fileReader)
+            var fileReader =
+                File.ReadAllText("C:\\Users\\hamptons\\Google Drive\\PlaceYourBets\\JSONexample - fixtures.txt");
+            var f = JsonConvert.DeserializeObject<FixtureList>(fileReader);
 
-            var f = JsonConvert.DeserializeObject<FixtureList>(reply);
+            //var f = JsonConvert.DeserializeObject<FixtureList>(reply);
 
             return f.stock;
         }
@@ -33,7 +34,7 @@ namespace ScorePredictor
         public List<Fixture> getBet()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/PYBPredictions.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBPredictions.php");
 
             //Dim fileReader As String
             //fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\hamptons\Google Drive\PlaceYourBets\JSONexample - predictions.txt")
@@ -47,7 +48,7 @@ namespace ScorePredictor
         public List<string> getUsers()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/PYBUsers.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBUsers.php");
             var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             //Dim fileReader As String
@@ -68,7 +69,7 @@ namespace ScorePredictor
         public object getScores()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/UserStats.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBUserStats.php");
             var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             //Dim fileReader As String
@@ -81,7 +82,7 @@ namespace ScorePredictor
         public object usersSubmitted()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/WhoBet.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBWhoBet.php");
             var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             var list = new List<string>();
@@ -109,7 +110,7 @@ namespace ScorePredictor
         public object getUsersAndIds()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/PYBUsers.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBUsers.php");
             var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             var dictionary = new Dictionary<string, int>();
@@ -126,7 +127,7 @@ namespace ScorePredictor
         public object getIdsandUsers()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/PYBUsers.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBUsers.php");
             var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             var dictionary = new Dictionary<int, string>();
@@ -143,7 +144,7 @@ namespace ScorePredictor
         public object getIds()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/PYBUsers.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBUsers.php");
             var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             var list = new List<int>();
@@ -160,7 +161,7 @@ namespace ScorePredictor
         public object getPRUsers()
         {
             var client = new WebClient();
-            var reply = client.DownloadString("http://www.predictresults.co.uk/API/PRUsers.php");
+            var reply = client.DownloadString("http://cgtipster.com/api2/PRUsers.php");
             var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             var list = new List<string>();

@@ -37,8 +37,12 @@
             this.vsLabel = new System.Windows.Forms.Label();
             this.homeBadgeBox = new System.Windows.Forms.PictureBox();
             this.awayScoreTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.backButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.awayBadgeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBadgeBox)).BeginInit();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateLabel
@@ -126,11 +130,48 @@
             this.awayScoreTextBox.Text = "0";
             this.awayScoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // groupBox
+            // 
+            this.groupBox.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox.Controls.Add(this.nextButton);
+            this.groupBox.Controls.Add(this.backButton);
+            this.groupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox.Location = new System.Drawing.Point(0, 349);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(734, 72);
+            this.groupBox.TabIndex = 13;
+            this.groupBox.TabStop = false;
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.White;
+            this.backButton.Location = new System.Drawing.Point(187, 19);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(150, 40);
+            this.backButton.TabIndex = 0;
+            this.backButton.Text = "< Back";
+            this.backButton.UseVisualStyleBackColor = false;
+            // 
+            // nextButton
+            // 
+            this.nextButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextButton.ForeColor = System.Drawing.Color.White;
+            this.nextButton.Location = new System.Drawing.Point(395, 19);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(150, 40);
+            this.nextButton.TabIndex = 1;
+            this.nextButton.Text = "Next >";
+            this.nextButton.UseVisualStyleBackColor = false;
+            // 
             // FixtureBoxUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.awayScoreTextBox);
             this.Controls.Add(this.homeBadgeBox);
             this.Controls.Add(this.vsLabel);
@@ -143,6 +184,7 @@
             this.Size = new System.Drawing.Size(734, 421);
             ((System.ComponentModel.ISupportInitialize)(this.awayBadgeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBadgeBox)).EndInit();
+            this.groupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +200,8 @@
         internal System.Windows.Forms.Label vsLabel;
         internal System.Windows.Forms.PictureBox homeBadgeBox;
         private System.Windows.Forms.TextBox awayScoreTextBox;
+        private System.Windows.Forms.GroupBox groupBox;
+        public System.Windows.Forms.Button nextButton;
+        public System.Windows.Forms.Button backButton;
     }
 }

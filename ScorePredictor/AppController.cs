@@ -17,7 +17,7 @@ namespace ScorePredictor
         private List<Users> userResultList = new List<Users>();
         private int fix;
 
-        public object getFixtures()
+        public void getFixtures()
         {
             fixtureBoxList.Clear();
             var fb = new FixtureBuilder();
@@ -29,27 +29,76 @@ namespace ScorePredictor
             {
                 foreach (Fixture Fixture in fixtures)
                 {
-                    var usercontrol = new FixtureBoxUserControl();
+                    var usercontrol = new FixtureBoxUserControl(Fixture.Home_Team, Fixture.Away_Team, Fixture.Date, Badges.getTeamBadge(Fixture.Home_Team), Badges.getTeamBadge(Fixture.Away_Team));
                     fixtureBoxList.Add(usercontrol);
                     fix = fix + 1;
                 }
 
-                fixtureBoxList[0].Visible = true;
-                fixtureBoxList[0].backButton.Enabled = false;
-                this.submitButton.Visible = false;
-                this.editButton.Visible = false;
+                
 
             }
             catch (NullReferenceException ex)
             {
-                Interaction.MsgBox("No fixtures available");
+                MainForm.displayMessage("No fixtures available");
             }
 
             if (fix != 10)
             {
-                this.MainFlowLayoutPanel.Controls.Clear();
                 fixtureBoxList.Clear();
-                Interaction.MsgBox("There are currently no fixtures to display");
+                MainForm.displayMessage("There are currently no fixtures to display");
+            }
+            else
+            {
+                fixtureBoxList[0].Visible = true;
+                fixtureBoxList[0].backButton.Enabled = false;
+                fixtureBoxList[0].nextButton.Enabled = true;
+            }
+        }
+
+        public void makeFixtureVisible(bool forward)
+        {
+            try
+            {
+
+                if ((forward))
+                {
+                    int previousFixtureNo = fixtureNo;
+                    fixtureNo = fixtureNo + 1;
+                    fixtureBoxList[previousFixtureNo].Visible = false;
+
+                    if (fixtureNo == 9)
+                    {
+                        fixtureBoxList[fixtureNo].nextButton.Text = "Review >";
+                        fixtureBoxList[fixtureNo].nextButton.BackColor = Color.LightGreen;
+                    }
+
+                    if (fixtureBoxList[previousFixtureNo].homeRadioButton.Checked == true)
+                    {
+                        fixtures[previousFixtureNo].Prediction = 1;
+                    }
+                    if (fixtureBoxList[previousFixtureNo].awayRadioButton.Checked == true)
+                    {
+                        fixtures[previousFixtureNo].Prediction = 2;
+                    }
+                    if (fixtureBoxList[previousFixtureNo].drawRadioButton.Checked == true)
+                    {
+                        fixtures[previousFixtureNo].Prediction = 3;
+                    }
+
+                }
+                else
+                {
+                    fixtureNo = fixtureNo - 1;
+                    fixtureBoxList[fixtureNo + 1].Visible = false;
+
+                }
+
+                fixtureBoxList[fixtureNo].Visible = true;
+
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Interaction.MsgBox("The full set of fixtures is not available. Please email complaints to michael.cole@advancedcomputersoftware.com");
             }
         }
 

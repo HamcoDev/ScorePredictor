@@ -18,7 +18,6 @@ namespace ScorePredictor
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
 
-            
         }
     }
 }
