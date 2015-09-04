@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ScorePredictor
 {
-    class AppController
+    internal class AppController
     {
 
         private List<Fixture> fixtures = new List<Fixture>();
@@ -15,26 +16,36 @@ namespace ScorePredictor
         private List<string> submittedList = new List<string>();
         private List<Users> userResultList = new List<Users>();
         private int fix;
+        private Users currentUser;
+        private FixtureBuilder fb = new FixtureBuilder();
+
+        public void setCurrentUser(string username, int id)
+        {
+            currentUser = new Users();
+            currentUser.username = username;
+            currentUser.UserID = id;
+        }
+
+        public Users getCurrentUser()
+        {
+            return currentUser;
+        }
 
         public List<FixtureBoxUserControl> getFixtures()
         {
             fixtureBoxList.Clear();
-            var fb = new FixtureBuilder();
             fixtures = fb.getFixtures();
             fix = 0;
-
 
             try
             {
                 foreach (Fixture Fixture in fixtures)
                 {
-                    var usercontrol = new FixtureBoxUserControl(Fixture.Home_Team, Fixture.Away_Team, Fixture.Date, Badges.getTeamBadge(Fixture.Home_Team), Badges.getTeamBadge(Fixture.Away_Team));
+                    var usercontrol = new FixtureBoxUserControl(Fixture.ID, Fixture.Home_Team, Fixture.Away_Team, Fixture.Date,
+                        Badges.getTeamBadge(Fixture.Home_Team), Badges.getTeamBadge(Fixture.Away_Team));
                     fixtureBoxList.Add(usercontrol);
                     fix = fix + 1;
                 }
-
-                
-
             }
             catch (NullReferenceException ex)
             {
@@ -54,85 +65,27 @@ namespace ScorePredictor
             }
         }
 
-        public void SubmitPredictions()
+        public void submitPredictions()
         {
-            bool submitted = false;
-
-
-            while ((!submitted))
+            var progress = new Progress();
+            try
             {
+                progress.setProgressBarSize(fixtureBoxList.Count - 1);
+                progress.Visible = true;
 
-                foreach (Fixture fixture in fixtures)
+                foreach (FixtureBoxUserControl fixture in fixtureBoxList)
                 {
-                    //My.MyProject.Forms.ProgressBarForm.ProgressBar1.PerformStep();
-                    //string UrlBase = "http://www.predictresults.co.uk/API/InsertDataUsingSP.php?userid=";
-                    //string user = currentUser.ToString();
-                    //string fixtureID = fixture.ID.ToString();
-                    //string prediction = fixture.Prediction.ToString();
-                    //string url = UrlBase + user + "&fixtureid=" + fixtureID + "&prediction=" + prediction;
-                    //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                    //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-                    ////Get the stream associated with the response. 
-                    //Stream receiveStream = response.GetResponseStream();
-                    //StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
-
-                    //response.Close();
-                    //readStream.Close();
-
+                    progress.incrementProgressBar(1);
+                    fb.submitScores(fixture.getFixtureId(), currentUser.username, fixture.getHomeScore(), fixture.getAwayScore());
                 }
-
-                submitted = true;
-
             }
+            catch (Exception)
+            {
+                progress.Visible = false;
+                throw;
+            }
+
+            progress.Visible = false;
         }
-
-        //public void makeFixtureVisible(bool forward)
-        //{
-        //    try
-        //    {
-
-        //        if ((forward))
-        //        {
-        //            int previousFixtureNo = fixtureNo;
-        //            fixtureNo = fixtureNo + 1;
-        //            fixtureBoxList[previousFixtureNo].Visible = false;
-
-                //    if (fixtureNo == 9)
-                //    {
-                //        fixtureBoxList[fixtureNo].nextButton.Text = "Review >";
-                //        fixtureBoxList[fixtureNo].nextButton.BackColor = Color.LightGreen;
-                //    }
-
-                //    if (fixtureBoxList[previousFixtureNo].homeRadioButton.Checked == true)
-                //    {
-                //        fixtures[previousFixtureNo].Prediction = 1;
-                //    }
-                //    if (fixtureBoxList[previousFixtureNo].awayRadioButton.Checked == true)
-                //    {
-                //        fixtures[previousFixtureNo].Prediction = 2;
-                //    }
-                //    if (fixtureBoxList[previousFixtureNo].drawRadioButton.Checked == true)
-                //    {
-                //        fixtures[previousFixtureNo].Prediction = 3;
-                //    }
-
-                //}
-                //else
-                //{
-                //    fixtureNo = fixtureNo - 1;
-                //    fixtureBoxList[fixtureNo + 1].Visible = false;
-
-    //            }
-
-    //            fixtureBoxList[fixtureNo].Visible = true;
-
-    //        }
-    //        catch (ArgumentOutOfRangeException ex)
-    //        {
-    //            //Interaction.MsgBox("The full set of fixtures is not available. Please email complaints to michael.cole@advancedcomputersoftware.com");
-    //        }
-    //    }
-
     }
 }

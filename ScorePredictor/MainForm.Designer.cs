@@ -30,14 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.menuButton = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.tablePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.shutdownButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
             this.statsButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.fixturesButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
-            this.nextButton = new System.Windows.Forms.Button();
-            this.submitButton = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mainPanel.Controls.Add(this.menuButton);
             this.mainPanel.Controls.Add(this.submitButton);
             this.mainPanel.Controls.Add(this.nextButton);
             this.mainPanel.Controls.Add(this.backButton);
@@ -55,6 +57,58 @@
             this.mainPanel.Size = new System.Drawing.Size(734, 421);
             this.mainPanel.TabIndex = 0;
             // 
+            // menuButton
+            // 
+            this.menuButton.BackColor = System.Drawing.Color.Silver;
+            this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.menuButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton.Location = new System.Drawing.Point(293, 346);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(150, 50);
+            this.menuButton.TabIndex = 5;
+            this.menuButton.Text = "Main Menu";
+            this.menuButton.UseVisualStyleBackColor = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            // 
+            // submitButton
+            // 
+            this.submitButton.BackColor = System.Drawing.Color.Silver;
+            this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.submitButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.Location = new System.Drawing.Point(469, 351);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(150, 40);
+            this.submitButton.TabIndex = 6;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            // 
+            // nextButton
+            // 
+            this.nextButton.BackColor = System.Drawing.Color.Silver;
+            this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.nextButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton.Location = new System.Drawing.Point(469, 351);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(150, 40);
+            this.nextButton.TabIndex = 4;
+            this.nextButton.Text = "Next >";
+            this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Silver;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.backButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(117, 351);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(150, 40);
+            this.backButton.TabIndex = 3;
+            this.backButton.Text = "< Back";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // tablePanel
             // 
             this.tablePanel.ColumnCount = 2;
@@ -62,7 +116,7 @@
             this.tablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablePanel.Controls.Add(this.settingsButton, 0, 1);
             this.tablePanel.Controls.Add(this.statsButton, 1, 0);
-            this.tablePanel.Controls.Add(this.shutdownButton, 1, 1);
+            this.tablePanel.Controls.Add(this.exitButton, 1, 1);
             this.tablePanel.Controls.Add(this.fixturesButton, 0, 0);
             this.tablePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanel.Location = new System.Drawing.Point(0, 0);
@@ -74,77 +128,60 @@
             this.tablePanel.Size = new System.Drawing.Size(734, 349);
             this.tablePanel.TabIndex = 0;
             // 
-            // shutdownButton
-            // 
-            this.shutdownButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.shutdownButton.Location = new System.Drawing.Point(450, 211);
-            this.shutdownButton.Name = "shutdownButton";
-            this.shutdownButton.Size = new System.Drawing.Size(200, 100);
-            this.shutdownButton.TabIndex = 3;
-            this.shutdownButton.Text = "Shutdown";
-            this.shutdownButton.UseVisualStyleBackColor = true;
-            // 
             // settingsButton
             // 
             this.settingsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.settingsButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.settingsButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsButton.Location = new System.Drawing.Point(83, 211);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(200, 100);
             this.settingsButton.TabIndex = 2;
             this.settingsButton.Text = "Settings";
-            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.UseVisualStyleBackColor = false;
             // 
             // statsButton
             // 
             this.statsButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.statsButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.statsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.statsButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statsButton.Location = new System.Drawing.Point(450, 71);
             this.statsButton.Name = "statsButton";
             this.statsButton.Size = new System.Drawing.Size(200, 100);
             this.statsButton.TabIndex = 1;
             this.statsButton.Text = "Statistics";
-            this.statsButton.UseVisualStyleBackColor = true;
+            this.statsButton.UseVisualStyleBackColor = false;
+            this.statsButton.Click += new System.EventHandler(this.statsButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.exitButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exitButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(450, 211);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(200, 100);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.shutdownButton_Click);
             // 
             // fixturesButton
             // 
             this.fixturesButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.fixturesButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.fixturesButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.fixturesButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fixturesButton.Location = new System.Drawing.Point(83, 71);
             this.fixturesButton.Name = "fixturesButton";
             this.fixturesButton.Size = new System.Drawing.Size(200, 100);
             this.fixturesButton.TabIndex = 0;
             this.fixturesButton.Text = "Fixtures";
-            this.fixturesButton.UseVisualStyleBackColor = true;
+            this.fixturesButton.UseVisualStyleBackColor = false;
             this.fixturesButton.Click += new System.EventHandler(this.fixturesButton_Click);
-            // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(181, 346);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(150, 50);
-            this.backButton.TabIndex = 1;
-            this.backButton.Text = "< Back";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // nextButton
-            // 
-            this.nextButton.Location = new System.Drawing.Point(406, 346);
-            this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(150, 50);
-            this.nextButton.TabIndex = 2;
-            this.nextButton.Text = "Next >";
-            this.nextButton.UseVisualStyleBackColor = true;
-            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
-            // 
-            // submitButton
-            // 
-            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(406, 346);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(150, 50);
-            this.submitButton.TabIndex = 3;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
-            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // MainForm
             // 
@@ -154,7 +191,9 @@
             this.ClientSize = new System.Drawing.Size(734, 421);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Score Predictor";
             this.mainPanel.ResumeLayout(false);
             this.tablePanel.ResumeLayout(false);
@@ -166,13 +205,14 @@
 
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.TableLayoutPanel tablePanel;
-        private System.Windows.Forms.Button shutdownButton;
+        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Button statsButton;
         private System.Windows.Forms.Button fixturesButton;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button menuButton;
     }
 }
 

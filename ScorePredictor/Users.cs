@@ -12,30 +12,12 @@ namespace ScorePredictor
 {
     public class Users
     {
+        public string username { get; set; }
 
-        public string user
-        {
-            get { return m_user; }
-            set { m_user = value; }
-        }
-        private string m_user;
-        public int submitted
-        {
-            get { return m_submitted; }
-            set { m_submitted = value; }
-        }
-        private int m_submitted;
-        public double correct
-        {
-            get { return m_correct; }
-            set { m_correct = value; }
-        }
-        private double m_correct;
-        public int UserID
-        {
-            get { return m_UserID; }
-            set { m_UserID = value; }
-        }
-        private int m_UserID;
+        public int submitted { get; set; }
+
+        public double correct { get; set; }
+
+        public int UserID { get; set; }
     }
 }

@@ -213,6 +213,16 @@ namespace ScorePredictor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap premier_league_fixtures_live_blog_3315631 {
+            get {
+                object obj = ResourceManager.GetObject("premier_league_fixtures_live_blog_3315631", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap QPR {
             get {
                 object obj = ResourceManager.GetObject("QPR", resourceCulture);
@@ -227,6 +237,16 @@ namespace ScorePredictor.Properties {
             get {
                 object obj = ResourceManager.GetObject("SOU", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon sp_icon_transparent_green_ayE_icon {
+            get {
+                object obj = ResourceManager.GetObject("sp_icon_transparent_green_ayE_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

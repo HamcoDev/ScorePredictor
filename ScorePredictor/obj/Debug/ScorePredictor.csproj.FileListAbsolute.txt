@@ -11,3 +11,6 @@ C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.Properti
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.csproj.GenerateResource.Cache
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.exe
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.pdb
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.Progress.resources
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.csprojResolveAssemblyReference.cache
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.LoginForm.resources

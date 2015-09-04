@@ -45,42 +45,46 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.BackColor = System.Drawing.Color.Transparent;
-            this.dateLabel.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.dateLabel.ForeColor = System.Drawing.Color.White;
+            this.dateLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateLabel.Location = new System.Drawing.Point(304, 244);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(38, 14);
-            this.dateLabel.TabIndex = 1;
+            this.dateLabel.TabIndex = 100;
             this.dateLabel.Text = "Date";
             // 
             // homeLabel
             // 
             this.homeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.homeLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.homeLabel.ForeColor = System.Drawing.Color.White;
+            this.homeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.homeLabel.Location = new System.Drawing.Point(69, 56);
             this.homeLabel.Name = "homeLabel";
             this.homeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.homeLabel.Size = new System.Drawing.Size(200, 29);
-            this.homeLabel.TabIndex = 2;
+            this.homeLabel.TabIndex = 100;
             this.homeLabel.Text = "Home";
             this.homeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // awayLabel
             // 
             this.awayLabel.BackColor = System.Drawing.Color.Transparent;
-            this.awayLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.awayLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.awayLabel.ForeColor = System.Drawing.Color.White;
+            this.awayLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.awayLabel.Location = new System.Drawing.Point(480, 57);
             this.awayLabel.Name = "awayLabel";
             this.awayLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.awayLabel.Size = new System.Drawing.Size(200, 28);
-            this.awayLabel.TabIndex = 4;
+            this.awayLabel.TabIndex = 100;
             this.awayLabel.Text = "Away";
             this.awayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // awayBadgeBox
             // 
+            this.awayBadgeBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.awayBadgeBox.Location = new System.Drawing.Point(417, 85);
             this.awayBadgeBox.Name = "awayBadgeBox";
             this.awayBadgeBox.Size = new System.Drawing.Size(40, 40);
@@ -90,27 +94,30 @@
             // homeScoreTextBox
             // 
             this.homeScoreTextBox.BackColor = System.Drawing.Color.White;
-            this.homeScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.homeScoreTextBox.Location = new System.Drawing.Point(279, 158);
             this.homeScoreTextBox.Multiline = true;
             this.homeScoreTextBox.Name = "homeScoreTextBox";
             this.homeScoreTextBox.Size = new System.Drawing.Size(50, 50);
-            this.homeScoreTextBox.TabIndex = 9;
+            this.homeScoreTextBox.TabIndex = 0;
             this.homeScoreTextBox.Text = "0";
             this.homeScoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.homeScoreTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.homeScoreTextBox_MouseClick);
             // 
             // vsLabel
             // 
             this.vsLabel.AutoSize = true;
+            this.vsLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.vsLabel.Location = new System.Drawing.Point(367, 99);
             this.vsLabel.Name = "vsLabel";
             this.vsLabel.Size = new System.Drawing.Size(18, 13);
-            this.vsLabel.TabIndex = 10;
+            this.vsLabel.TabIndex = 100;
             this.vsLabel.Text = "vs";
             this.vsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // homeBadgeBox
             // 
+            this.homeBadgeBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.homeBadgeBox.Location = new System.Drawing.Point(307, 85);
             this.homeBadgeBox.Name = "homeBadgeBox";
             this.homeBadgeBox.Size = new System.Drawing.Size(40, 40);
@@ -120,14 +127,15 @@
             // awayScoreTextBox
             // 
             this.awayScoreTextBox.BackColor = System.Drawing.Color.White;
-            this.awayScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.awayScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.awayScoreTextBox.Location = new System.Drawing.Point(417, 158);
             this.awayScoreTextBox.Multiline = true;
             this.awayScoreTextBox.Name = "awayScoreTextBox";
             this.awayScoreTextBox.Size = new System.Drawing.Size(50, 50);
-            this.awayScoreTextBox.TabIndex = 12;
+            this.awayScoreTextBox.TabIndex = 1;
             this.awayScoreTextBox.Text = "0";
             this.awayScoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.awayScoreTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.awayScoreTextBox_MouseClick);
             // 
             // FixtureBoxUserControl
             // 
