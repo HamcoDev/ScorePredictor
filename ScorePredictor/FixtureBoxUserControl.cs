@@ -22,5 +22,10 @@ namespace ScorePredictor
             this.awayBadgeBox.Image = awayTeamImage;
 
         }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

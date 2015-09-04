@@ -1,1 +1,13 @@
 C:\Source\Github\ScorePredictor\ScorePredictor\bin\Debug\ScorePredictor.exe.config
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Debug\ScorePredictor.exe
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Debug\ScorePredictor.pdb
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Debug\Newtonsoft.Json.dll
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Debug\Newtonsoft.Json.pdb
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Debug\Newtonsoft.Json.xml
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.FixtureBox.resources
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.FixtureBoxUserControl.resources
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.MainForm.resources
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.Properties.Resources.resources
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.csproj.GenerateResource.Cache
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.exe
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.pdb

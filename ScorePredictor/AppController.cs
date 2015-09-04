@@ -9,7 +9,6 @@ namespace ScorePredictor
     class AppController
     {
 
-        private int fixtureNo = 0;
         private List<Fixture> fixtures = new List<Fixture>();
         private List<FixtureBoxUserControl> fixtureBoxList = new List<FixtureBoxUserControl>();
         private List<string> userList = new List<string>();
@@ -17,7 +16,7 @@ namespace ScorePredictor
         private List<Users> userResultList = new List<Users>();
         private int fix;
 
-        public void getFixtures()
+        public List<FixtureBoxUserControl> getFixtures()
         {
             fixtureBoxList.Clear();
             var fb = new FixtureBuilder();
@@ -46,61 +45,94 @@ namespace ScorePredictor
             {
                 fixtureBoxList.Clear();
                 MainForm.displayMessage("There are currently no fixtures to display");
+                return fixtureBoxList;
             }
             else
             {
                 fixtureBoxList[0].Visible = true;
-                fixtureBoxList[0].backButton.Enabled = false;
-                fixtureBoxList[0].nextButton.Enabled = true;
+                return fixtureBoxList;
             }
         }
 
-        public void makeFixtureVisible(bool forward)
+        public void SubmitPredictions()
         {
-            try
+            bool submitted = false;
+
+
+            while ((!submitted))
             {
 
-                if ((forward))
+                foreach (Fixture fixture in fixtures)
                 {
-                    int previousFixtureNo = fixtureNo;
-                    fixtureNo = fixtureNo + 1;
-                    fixtureBoxList[previousFixtureNo].Visible = false;
+                    //My.MyProject.Forms.ProgressBarForm.ProgressBar1.PerformStep();
+                    //string UrlBase = "http://www.predictresults.co.uk/API/InsertDataUsingSP.php?userid=";
+                    //string user = currentUser.ToString();
+                    //string fixtureID = fixture.ID.ToString();
+                    //string prediction = fixture.Prediction.ToString();
+                    //string url = UrlBase + user + "&fixtureid=" + fixtureID + "&prediction=" + prediction;
+                    //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                    //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-                    if (fixtureNo == 9)
-                    {
-                        fixtureBoxList[fixtureNo].nextButton.Text = "Review >";
-                        fixtureBoxList[fixtureNo].nextButton.BackColor = Color.LightGreen;
-                    }
+                    ////Get the stream associated with the response. 
+                    //Stream receiveStream = response.GetResponseStream();
+                    //StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
 
-                    if (fixtureBoxList[previousFixtureNo].homeRadioButton.Checked == true)
-                    {
-                        fixtures[previousFixtureNo].Prediction = 1;
-                    }
-                    if (fixtureBoxList[previousFixtureNo].awayRadioButton.Checked == true)
-                    {
-                        fixtures[previousFixtureNo].Prediction = 2;
-                    }
-                    if (fixtureBoxList[previousFixtureNo].drawRadioButton.Checked == true)
-                    {
-                        fixtures[previousFixtureNo].Prediction = 3;
-                    }
-
-                }
-                else
-                {
-                    fixtureNo = fixtureNo - 1;
-                    fixtureBoxList[fixtureNo + 1].Visible = false;
+                    //response.Close();
+                    //readStream.Close();
 
                 }
 
-                fixtureBoxList[fixtureNo].Visible = true;
+                submitted = true;
 
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                Interaction.MsgBox("The full set of fixtures is not available. Please email complaints to michael.cole@advancedcomputersoftware.com");
             }
         }
+
+        //public void makeFixtureVisible(bool forward)
+        //{
+        //    try
+        //    {
+
+        //        if ((forward))
+        //        {
+        //            int previousFixtureNo = fixtureNo;
+        //            fixtureNo = fixtureNo + 1;
+        //            fixtureBoxList[previousFixtureNo].Visible = false;
+
+                //    if (fixtureNo == 9)
+                //    {
+                //        fixtureBoxList[fixtureNo].nextButton.Text = "Review >";
+                //        fixtureBoxList[fixtureNo].nextButton.BackColor = Color.LightGreen;
+                //    }
+
+                //    if (fixtureBoxList[previousFixtureNo].homeRadioButton.Checked == true)
+                //    {
+                //        fixtures[previousFixtureNo].Prediction = 1;
+                //    }
+                //    if (fixtureBoxList[previousFixtureNo].awayRadioButton.Checked == true)
+                //    {
+                //        fixtures[previousFixtureNo].Prediction = 2;
+                //    }
+                //    if (fixtureBoxList[previousFixtureNo].drawRadioButton.Checked == true)
+                //    {
+                //        fixtures[previousFixtureNo].Prediction = 3;
+                //    }
+
+                //}
+                //else
+                //{
+                //    fixtureNo = fixtureNo - 1;
+                //    fixtureBoxList[fixtureNo + 1].Visible = false;
+
+    //            }
+
+    //            fixtureBoxList[fixtureNo].Visible = true;
+
+    //        }
+    //        catch (ArgumentOutOfRangeException ex)
+    //        {
+    //            //Interaction.MsgBox("The full set of fixtures is not available. Please email complaints to michael.cole@advancedcomputersoftware.com");
+    //        }
+    //    }
 
     }
 }
