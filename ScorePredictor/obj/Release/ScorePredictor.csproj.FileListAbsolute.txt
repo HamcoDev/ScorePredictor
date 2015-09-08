@@ -13,3 +13,6 @@ C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.Proper
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.csproj.GenerateResource.Cache
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.exe
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.pdb
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.csprojResolveAssemblyReference.cache
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.PointsTableUserControl.resources
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.PointsUserControl.resources

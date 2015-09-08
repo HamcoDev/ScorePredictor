@@ -253,6 +253,16 @@ namespace ScorePredictor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap stadium {
+            get {
+                object obj = ResourceManager.GetObject("stadium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap STO {
             get {
                 object obj = ResourceManager.GetObject("STO", resourceCulture);

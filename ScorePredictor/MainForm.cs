@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScorePredictor
@@ -16,7 +10,6 @@ namespace ScorePredictor
         private List<FixtureBoxUserControl> fixtureBoxList;
         private int fix;
         private int listSize;
-        private WebBrowser browser;
 
         public MainForm()
         {
@@ -62,15 +55,6 @@ namespace ScorePredictor
 
         private void statsButton_Click(object sender, EventArgs e)
         {
-            var address = "http://www.bbc.co.uk/sport/football/tables";
-            browser = new WebBrowser
-            {
-                Visible = false,
-                Dock = DockStyle.Fill
-            };
-            
-            
-
             tablePanel.Visible = false;
             submitButton.Visible = false;
             backButton.Enabled = false;
@@ -78,18 +62,12 @@ namespace ScorePredictor
             nextButton.Visible = false;
             backButton.Visible = false;
             menuButton.Visible = true;
-            mainPanel.Controls.Add(browser);
-            browser.Visible = true;
 
-            try
-            {
-                browser.Navigate(new Uri(address));
-            }
-            catch (UriFormatException uriException)
-            {
-                MessageBox.Show(uriException.ToString());
-            }
-                
+            var tableUsercontrol = new PointsTableUserControl();
+            mainPanel.Controls.Add(tableUsercontrol);
+            var pointsUserControl = new PointsUserControl();
+            pointsUserControl.setUserPoints("Sam", "74");
+            tableUsercontrol.Add(pointsUserControl, 0);
         }
 
         private void nextButton_Click(object sender, EventArgs e)
@@ -206,10 +184,6 @@ namespace ScorePredictor
             menuButton.Visible = false;
             tablePanel.Visible = true;
 
-            if (browser != null)
-            {
-                browser.Dispose();
-            }
         }
     }
 }
