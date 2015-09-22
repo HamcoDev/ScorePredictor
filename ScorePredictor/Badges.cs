@@ -23,7 +23,7 @@ namespace ScorePredictor
                 case "Aston Villa":
                     badge = ScorePredictor.Properties.Resources.AST;
                     break;
-                case "Bournemouth":
+                case "AFC Bournemouth":
                     badge = ScorePredictor.Properties.Resources.BOU;
                     break;   
                 case "Burnley":
@@ -53,7 +53,7 @@ namespace ScorePredictor
                 case "Manchester United":
                     badge = ScorePredictor.Properties.Resources.MNU;
                     break;
-                case "Norwich":
+                case "Norwich City":
                     badge = ScorePredictor.Properties.Resources.NOR;
                     break;
                 case "Newcastle United":

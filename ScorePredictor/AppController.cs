@@ -10,6 +10,10 @@ namespace ScorePredictor
     internal class AppController
     {
 
+        private static AppController instance;
+
+        private AppController() {}
+        
         private List<Fixture> fixtures = new List<Fixture>();
         private List<FixtureBoxUserControl> fixtureBoxList = new List<FixtureBoxUserControl>();
         private List<string> userList = new List<string>();
@@ -19,10 +23,22 @@ namespace ScorePredictor
         private Users currentUser;
         private FixtureBuilder fb = new FixtureBuilder();
 
+        public static AppController Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new AppController();
+                }
+                return instance;
+            }
+        }
+
         public void setCurrentUser(string username, int id)
         {
             currentUser = new Users();
-            currentUser.username = username;
+            currentUser.name = username;
             currentUser.UserID = id;
         }
 
@@ -76,7 +92,7 @@ namespace ScorePredictor
                 foreach (FixtureBoxUserControl fixture in fixtureBoxList)
                 {
                     progress.incrementProgressBar(1);
-                    fb.submitScores(fixture.getFixtureId(), currentUser.username, fixture.getHomeScore(), fixture.getAwayScore());
+                    fb.submitScores(fixture.getFixtureId(), currentUser.name, fixture.getHomeScore(), fixture.getAwayScore());
                 }
             }
             catch (Exception)

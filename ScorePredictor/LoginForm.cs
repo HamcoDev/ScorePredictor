@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScorePredictor
@@ -15,14 +9,39 @@ namespace ScorePredictor
         public LoginForm()
         {
             InitializeComponent();
-            maskedTextBox.AutoSize = false;
-            maskedTextBox.Height = 25;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new MainForm().ShowDialog();
+            var app = AppController.Instance;
+            var query = new FixtureBuilder();
+
+            Dictionary<string, int> userDictionary = new Dictionary<string, int>();
+            userDictionary = query.getUsernamesAndIds();
+
+            string username = usernameTextBox.Text.ToLower();
+            int userId;
+
+            if (string.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("Please enter your username");
+            }
+            else
+            {
+                if (userDictionary.TryGetValue(username, out userId))
+                {
+                    app.setCurrentUser(username, userId);
+                    this.Hide();
+                    new MainForm().ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Username not recognised");
+                    usernameTextBox.Clear();
+                }
+            }
+            
+            
         }
 
         private void usernameTextBox_MouseClick(object sender, MouseEventArgs e)
@@ -33,6 +52,11 @@ namespace ScorePredictor
         private void usernameTextBox_GotFocus(object sender, MouseEventArgs e)
         {
             usernameTextBox.SelectAll();
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

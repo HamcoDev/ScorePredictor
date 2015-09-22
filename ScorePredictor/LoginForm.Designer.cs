@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.hamcoLabel = new System.Windows.Forms.Label();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.registerButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::ScorePredictor.Properties.Resources.premier_league_fixtures_live_blog_3315631;
+            this.panel1.Controls.Add(this.registerButton);
             this.panel1.Controls.Add(this.hamcoLabel);
-            this.panel1.Controls.Add(this.maskedTextBox);
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Controls.Add(this.usernameTextBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -49,6 +49,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 369);
             this.panel1.TabIndex = 0;
+            // 
+            // hamcoLabel
+            // 
+            this.hamcoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.hamcoLabel.AutoSize = true;
+            this.hamcoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.hamcoLabel.Location = new System.Drawing.Point(277, 356);
+            this.hamcoLabel.Name = "hamcoLabel";
+            this.hamcoLabel.Size = new System.Drawing.Size(215, 13);
+            this.hamcoLabel.TabIndex = 3;
+            this.hamcoLabel.Text = "© HamCo 2015 http://www.hamcodev.com";
+            // 
+            // loginButton
+            // 
+            this.loginButton.FlatAppearance.BorderSize = 2;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.loginButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.Location = new System.Drawing.Point(179, 255);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(134, 30);
+            this.loginButton.TabIndex = 2;
+            this.loginButton.Text = "Log in";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // usernameTextBox
             // 
@@ -64,43 +88,21 @@
             this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.usernameTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.usernameTextBox_MouseClick);
             // 
-            // loginButton
+            // registerButton
             // 
-            this.loginButton.FlatAppearance.BorderSize = 2;
-            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.loginButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(179, 287);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(134, 30);
-            this.loginButton.TabIndex = 2;
-            this.loginButton.Text = "Log in";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // maskedTextBox
-            // 
-            this.maskedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox.Location = new System.Drawing.Point(179, 255);
-            this.maskedTextBox.Name = "maskedTextBox";
-            this.maskedTextBox.PasswordChar = '*';
-            this.maskedTextBox.Size = new System.Drawing.Size(134, 22);
-            this.maskedTextBox.TabIndex = 1;
-            this.maskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // hamcoLabel
-            // 
-            this.hamcoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.hamcoLabel.AutoSize = true;
-            this.hamcoLabel.BackColor = System.Drawing.Color.Transparent;
-            this.hamcoLabel.Location = new System.Drawing.Point(277, 356);
-            this.hamcoLabel.Name = "hamcoLabel";
-            this.hamcoLabel.Size = new System.Drawing.Size(215, 13);
-            this.hamcoLabel.TabIndex = 3;
-            this.hamcoLabel.Text = "© HamCo 2015 http://www.hamcodev.com";
+            this.registerButton.FlatAppearance.BorderSize = 2;
+            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.registerButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerButton.Location = new System.Drawing.Point(179, 291);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(134, 30);
+            this.registerButton.TabIndex = 4;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 369);
@@ -120,7 +122,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label hamcoLabel;
+        private System.Windows.Forms.Button registerButton;
     }
 }

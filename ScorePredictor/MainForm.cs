@@ -6,10 +6,10 @@ namespace ScorePredictor
 {
     public partial class MainForm : Form
     {
-        private AppController app = new AppController();
         private List<FixtureBoxUserControl> fixtureBoxList;
         private int fix;
         private int listSize;
+        private AppController app = AppController.Instance;
 
         public MainForm()
         {
@@ -19,7 +19,6 @@ namespace ScorePredictor
             submitButton.Visible = false;
             menuButton.Visible = false;
             settingsButton.Enabled = false;
-            app.setCurrentUser("sam", 001);
             fixtureBoxList = app.getFixtures();
             listSize = fixtureBoxList.Count - 1;
             
@@ -55,6 +54,10 @@ namespace ScorePredictor
 
         private void statsButton_Click(object sender, EventArgs e)
         {
+            var fb = new FixtureBuilder();
+            var weekStats = fb.getWeekStats();
+            var totalStats = fb.getTotalStats();
+
             tablePanel.Visible = false;
             submitButton.Visible = false;
             backButton.Enabled = false;
@@ -65,9 +68,21 @@ namespace ScorePredictor
 
             var tableUsercontrol = new PointsTableUserControl();
             mainPanel.Controls.Add(tableUsercontrol);
-            var pointsUserControl = new PointsUserControl();
-            pointsUserControl.setUserPoints("Sam", "74");
-            tableUsercontrol.Add(pointsUserControl, 0);
+
+            foreach (KeyValuePair<string, int> user in weekStats)
+            {
+                var pointsUserControl = new PointsUserControl();
+                pointsUserControl.setUserPoints(user.Key, user.Value.ToString());
+                tableUsercontrol.Add(pointsUserControl, 1);
+            }
+
+            foreach (KeyValuePair<string, int> user in totalStats)
+            {
+                var pointsUserControl = new PointsUserControl();
+                pointsUserControl.setUserPoints(user.Key, user.Value.ToString());
+                tableUsercontrol.Add(pointsUserControl, 0);
+            }
+            
         }
 
         private void nextButton_Click(object sender, EventArgs e)
