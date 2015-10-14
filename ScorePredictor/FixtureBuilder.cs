@@ -103,11 +103,11 @@ namespace ScorePredictor
 
         }
 
-        public void submitScores(string fixtureId, string currentUser, int homePrediction, int awayPrediction)
+        public void submitScores(string fixtureId, int currentUser, int homePrediction, int awayPrediction)
         {
 
-            string UrlBase = "http://www.cgtipster.com/api2/PYBInsertPredictions.php?fixtureid=";
-            string url = UrlBase + fixtureId + "&userid=" + currentUser + "&homeprediction=" + homePrediction + "&awayprediction=" + awayPrediction;
+            string UrlBase = "http://www.cgtipster.com/api2/PYBInsertPredictions.php?userid=";
+            string url = UrlBase + currentUser + "&fixtureid=" + fixtureId + "&homeprediction=" + homePrediction + "&awayprediction=" + awayPrediction;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
@@ -121,24 +121,25 @@ namespace ScorePredictor
 
         public Dictionary<string, int> getWeekStats()
         {
-            //var client = new WebClient();
-            //var reply = client.DownloadString("http://www.cgtipster.com/api2/PYBUserStats.php");
-            //var f = JsonConvert.DeserializeObject<UserList>(reply);
+            var client = new WebClient();
+            var reply = client.DownloadString("http://www.cgtipster.com/api2/PYBWeeklyStats.php");
+            var f = JsonConvert.DeserializeObject<UserList>(reply);
             
-            var fileReader = File.ReadAllText("JSONexample - stats.txt");
-            var f = JsonConvert.DeserializeObject<UserList>(fileReader);
+            //var fileReader = File.ReadAllText("JSONexample - stats.txt");
+            //var f = JsonConvert.DeserializeObject<UserList>(fileReader);
 
             return f.stock.ToDictionary(user => user.name, user => user.weekScore);
+            
         }
 
         public Dictionary<string, int> getTotalStats() 
         {
-            //var client = new WebClient();
-            //var reply = client.DownloadString("http://www.cgtipster.com/api2/PYBUserStats.php");
-            //var f = JsonConvert.DeserializeObject<UserList>(reply);
+            var client = new WebClient();
+            var reply = client.DownloadString("http://www.cgtipster.com/api2/PYBTotalStats.php");
+            var f = JsonConvert.DeserializeObject<UserList>(reply);
 
-            var fileReader = File.ReadAllText("JSONexample - stats.txt");
-            var f = JsonConvert.DeserializeObject<UserList>(fileReader);
+            //var fileReader = File.ReadAllText("JSONexample - stats.txt");
+            //var f = JsonConvert.DeserializeObject<UserList>(fileReader);
 
             return f.stock.ToDictionary(user => user.name, user => user.totalScore);
         }

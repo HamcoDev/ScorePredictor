@@ -58,5 +58,11 @@ namespace ScorePredictor
         {
 
         }
+
+        private void registerButton_Click_1(object sender, EventArgs e)
+        {
+            var regForm = new RegistrationForm();
+            regForm.Show();
+        }
     }
 }

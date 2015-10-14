@@ -30,8 +30,8 @@
         {
             this.pointsTabControl = new System.Windows.Forms.TabControl();
             this.overallTabPage = new System.Windows.Forms.TabPage();
-            this.weekTabPage = new System.Windows.Forms.TabPage();
             this.overallFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.weekTabPage = new System.Windows.Forms.TabPage();
             this.weekFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.pointsTabControl.SuspendLayout();
             this.overallTabPage.SuspendLayout();
@@ -50,6 +50,7 @@
             this.pointsTabControl.SelectedIndex = 0;
             this.pointsTabControl.Size = new System.Drawing.Size(734, 349);
             this.pointsTabControl.TabIndex = 0;
+            this.pointsTabControl.SelectedIndexChanged += new System.EventHandler(this.pointsTabControl_SelectedIndexChanged);
             // 
             // overallTabPage
             // 
@@ -63,6 +64,18 @@
             this.overallTabPage.Text = "Overall";
             this.overallTabPage.UseVisualStyleBackColor = true;
             // 
+            // overallFlowLayoutPanel
+            // 
+            this.overallFlowLayoutPanel.AutoScroll = true;
+            this.overallFlowLayoutPanel.BackColor = System.Drawing.Color.White;
+            this.overallFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overallFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.overallFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.overallFlowLayoutPanel.Name = "overallFlowLayoutPanel";
+            this.overallFlowLayoutPanel.Size = new System.Drawing.Size(720, 310);
+            this.overallFlowLayoutPanel.TabIndex = 0;
+            this.overallFlowLayoutPanel.WrapContents = false;
+            // 
             // weekTabPage
             // 
             this.weekTabPage.Controls.Add(this.weekFlowLayoutPanel);
@@ -74,24 +87,17 @@
             this.weekTabPage.Text = "This Week";
             this.weekTabPage.UseVisualStyleBackColor = true;
             // 
-            // overallFlowLayoutPanel
-            // 
-            this.overallFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overallFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.overallFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
-            this.overallFlowLayoutPanel.Name = "overallFlowLayoutPanel";
-            this.overallFlowLayoutPanel.Size = new System.Drawing.Size(720, 310);
-            this.overallFlowLayoutPanel.TabIndex = 0;
-            // 
             // weekFlowLayoutPanel
             // 
-            this.weekFlowLayoutPanel.BackgroundImage = global::ScorePredictor.Properties.Resources.stadium;
+            this.weekFlowLayoutPanel.AutoScroll = true;
+            this.weekFlowLayoutPanel.BackColor = System.Drawing.Color.White;
             this.weekFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.weekFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.weekFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this.weekFlowLayoutPanel.Name = "weekFlowLayoutPanel";
             this.weekFlowLayoutPanel.Size = new System.Drawing.Size(720, 310);
             this.weekFlowLayoutPanel.TabIndex = 0;
+            this.weekFlowLayoutPanel.WrapContents = false;
             // 
             // PointsTableUserControl
             // 

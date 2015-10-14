@@ -22,5 +22,10 @@ namespace ScorePredictor
             nameLabel.Text = username;
             pointsLabel.Text = points;
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace ScorePredictor
         private int fix;
         private int listSize;
         private AppController app = AppController.Instance;
+        private PointsTableUserControl tableUsercontrol = new PointsTableUserControl();
 
         public MainForm()
         {
@@ -19,21 +20,20 @@ namespace ScorePredictor
             submitButton.Visible = false;
             menuButton.Visible = false;
             settingsButton.Enabled = false;
+        }
+
+        private void fixturesButton_Click(object sender, EventArgs e)
+        {
+
             fixtureBoxList = app.getFixtures();
             listSize = fixtureBoxList.Count - 1;
-            
-            
             foreach (FixtureBoxUserControl fb in fixtureBoxList)
             {
                 mainPanel.Controls.Add(fb);
                 fb.Visible = false;
             }
-        }
 
-        private void fixturesButton_Click(object sender, EventArgs e)
-        {
-            
-            if (fixtureBoxList != null)
+            if (fixtureBoxList.Count != 0)
             {
                 fix = 0;
                 tablePanel.Visible = false;
@@ -61,25 +61,29 @@ namespace ScorePredictor
             tablePanel.Visible = false;
             submitButton.Visible = false;
             backButton.Enabled = false;
-            fixtureBoxList[fix].Visible = false;
+
+            try
+            {
+                fixtureBoxList[fix].Visible = false;
+            }
+            catch (Exception ex){}
             nextButton.Visible = false;
             backButton.Visible = false;
             menuButton.Visible = true;
 
-            var tableUsercontrol = new PointsTableUserControl();
             mainPanel.Controls.Add(tableUsercontrol);
 
             foreach (KeyValuePair<string, int> user in weekStats)
             {
                 var pointsUserControl = new PointsUserControl();
-                pointsUserControl.setUserPoints(user.Key, user.Value.ToString());
+                pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
                 tableUsercontrol.Add(pointsUserControl, 1);
             }
 
             foreach (KeyValuePair<string, int> user in totalStats)
             {
                 var pointsUserControl = new PointsUserControl();
-                pointsUserControl.setUserPoints(user.Key, user.Value.ToString());
+                pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
                 tableUsercontrol.Add(pointsUserControl, 0);
             }
             
@@ -87,6 +91,7 @@ namespace ScorePredictor
 
         private void nextButton_Click(object sender, EventArgs e)
         {
+            SuspendLayout();
             fixtureBoxList[fix].Visible = false;
             fix += 1;
             fixtureBoxList[fix].Visible = true;
@@ -116,6 +121,7 @@ namespace ScorePredictor
                 nextButton.Enabled = true;
                 submitButton.Visible = false;
             }
+            ResumeLayout();
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -188,17 +194,20 @@ namespace ScorePredictor
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            foreach (FixtureBoxUserControl fb in fixtureBoxList)
+            if (fixtureBoxList != null)
             {
-                fb.Visible = false;
+                foreach (FixtureBoxUserControl fb in fixtureBoxList)
+                {
+                    fb.Visible = false;
+                }
             }
-
+            
             backButton.Visible = false;
             nextButton.Visible = false;
             submitButton.Visible = false;
             menuButton.Visible = false;
+            tableUsercontrol.Visible = false;
             tablePanel.Visible = true;
-
         }
     }
 }

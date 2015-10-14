@@ -65,13 +65,13 @@ namespace ScorePredictor
             }
             catch (NullReferenceException ex)
             {
-                MainForm.displayMessage("No fixtures available");
+            
             }
 
             if (fix != 10)
             {
                 fixtureBoxList.Clear();
-                MainForm.displayMessage("There are currently no fixtures to display");
+                MainForm.displayMessage("No fixtures available");
                 return fixtureBoxList;
             }
             else
@@ -92,7 +92,7 @@ namespace ScorePredictor
                 foreach (FixtureBoxUserControl fixture in fixtureBoxList)
                 {
                     progress.incrementProgressBar(1);
-                    fb.submitScores(fixture.getFixtureId(), currentUser.name, fixture.getHomeScore(), fixture.getAwayScore());
+                    fb.submitScores(fixture.getFixtureId(), currentUser.UserID, fixture.getHomeScore(), fixture.getAwayScore());
                 }
             }
             catch (Exception)

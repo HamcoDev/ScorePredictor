@@ -33,14 +33,12 @@
             this.hamcoLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.registerButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::ScorePredictor.Properties.Resources.premier_league_fixtures_live_blog_3315631;
-            this.panel1.Controls.Add(this.registerButton);
             this.panel1.Controls.Add(this.hamcoLabel);
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Controls.Add(this.usernameTextBox);
@@ -66,7 +64,7 @@
             this.loginButton.FlatAppearance.BorderSize = 2;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.loginButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(179, 255);
+            this.loginButton.Location = new System.Drawing.Point(179, 283);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(134, 30);
             this.loginButton.TabIndex = 2;
@@ -79,7 +77,7 @@
             this.usernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.usernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.usernameTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(179, 224);
+            this.usernameTextBox.Location = new System.Drawing.Point(179, 252);
             this.usernameTextBox.Multiline = true;
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(134, 25);
@@ -87,18 +85,6 @@
             this.usernameTextBox.Text = "Username...";
             this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.usernameTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.usernameTextBox_MouseClick);
-            // 
-            // registerButton
-            // 
-            this.registerButton.FlatAppearance.BorderSize = 2;
-            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.registerButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(179, 291);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(134, 30);
-            this.registerButton.TabIndex = 4;
-            this.registerButton.Text = "Register";
-            this.registerButton.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
@@ -123,6 +109,5 @@
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label hamcoLabel;
-        private System.Windows.Forms.Button registerButton;
     }
 }

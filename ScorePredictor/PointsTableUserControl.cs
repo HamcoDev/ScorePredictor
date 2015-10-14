@@ -24,6 +24,13 @@ namespace ScorePredictor
             }
 
         }
+
+        private void pointsTabControl_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            SuspendLayout();
+            PerformLayout();
+        }
+
     }
 
     
