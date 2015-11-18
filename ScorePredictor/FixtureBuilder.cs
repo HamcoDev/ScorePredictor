@@ -46,18 +46,21 @@ namespace ScorePredictor
 
         public List<string> usersSubmitted()
         {
-            var client = new WebClient();
-            var reply = client.DownloadString("http://cgtipster.com/api2/PYBWhoBet.php");
-            var f = JsonConvert.DeserializeObject<UserList>(reply);
+            //var client = new WebClient();
+            //var reply = client.DownloadString("http://cgtipster.com/api2/PYBWhoBet.php");
+
+            var fileReader = File.ReadAllText("JSONExample - UsersPredictions.txt");
+            var f = JsonConvert.DeserializeObject<UserList>(fileReader);
+            
+            ///var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             var list = new List<string>();
-
 
             try
             {
                 foreach (Users user in f.stock)
                 {
-                    list.Add(user.name);
+                    list.Add(user.user);
                 }
 
 
@@ -150,7 +153,7 @@ namespace ScorePredictor
             return f.stock.ToDictionary(user => user.name, user => user.totalScore);
         }
 
-        public List<Prediction> getPredictions()
+        public List<Prediction> getPredictions(int userId)
         {
             var client = new WebClient();
             var reply = client.DownloadString("http://cgtipster.com/api2/PYBPredictions.php");
@@ -162,16 +165,55 @@ namespace ScorePredictor
 
             var app = AppController.Instance;
             var PredictionList = new List<Prediction>();
-            var CurrentUser = app.getCurrentUser();
             
             foreach (Prediction p in f.stock)
             {
-                if (p.userId == CurrentUser.UserID)
+                if (p.userId == userId)
                 {
                     PredictionList.Add(p);
                 }
             }
             return PredictionList;
+        }
+
+        public String getUsername(int userId)
+        {
+            var client = new WebClient();
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBUsers.php");
+            var f = JsonConvert.DeserializeObject<UserList>(reply);
+
+            var result ="";
+
+            foreach (Users user in f.stock)
+            {
+                if (user.UserID == userId)
+                {
+                    result = user.name;
+                }
+            }
+
+            return result;
+
+        }
+
+        public int getUserId(string userName)
+        {
+            var client = new WebClient();
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBUsers.php");
+            var f = JsonConvert.DeserializeObject<UserList>(reply);
+
+            var result = 0;
+
+            foreach (Users user in f.stock)
+            {
+                if (user.name == userName)
+                {
+                    result = user.UserID;
+                }
+            }
+
+            return result;
+
         }
 
     }

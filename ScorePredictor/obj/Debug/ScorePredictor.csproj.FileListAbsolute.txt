@@ -20,3 +20,4 @@ C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.exe.mani
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.application
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.exe
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.pdb
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Debug\ScorePredictor.csprojResolveAssemblyReference.cache

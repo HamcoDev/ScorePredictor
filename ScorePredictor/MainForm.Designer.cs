@@ -39,6 +39,7 @@
             this.statsButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.fixturesButton = new System.Windows.Forms.Button();
+            this.usersComboBox = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mainPanel.Controls.Add(this.usersComboBox);
             this.mainPanel.Controls.Add(this.menuButton);
             this.mainPanel.Controls.Add(this.submitButton);
             this.mainPanel.Controls.Add(this.nextButton);
@@ -184,6 +186,16 @@
             this.fixturesButton.UseVisualStyleBackColor = false;
             this.fixturesButton.Click += new System.EventHandler(this.fixturesButton_Click);
             // 
+            // usersComboBox
+            // 
+            this.usersComboBox.FormattingEnabled = true;
+            this.usersComboBox.ItemHeight = 13;
+            this.usersComboBox.Location = new System.Drawing.Point(469, 356);
+            this.usersComboBox.Name = "usersComboBox";
+            this.usersComboBox.Size = new System.Drawing.Size(193, 21);
+            this.usersComboBox.TabIndex = 7;
+            this.usersComboBox.SelectedIndexChanged += new System.EventHandler(this.usersComboBox_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +228,7 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button menuButton;
+        private System.Windows.Forms.ComboBox usersComboBox;
     }
 }
 

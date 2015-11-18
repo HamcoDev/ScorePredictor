@@ -11,7 +11,7 @@ namespace ScorePredictor
         private int listSize;
         private AppController app = AppController.Instance;
         private PointsTableUserControl tableUsercontrol = new PointsTableUserControl();
-        private PredictionUserControl predictionsUserControl;
+        private PredictionUserControl predictionsUserControl = new PredictionUserControl();
 
         public MainForm()
         {
@@ -20,6 +20,7 @@ namespace ScorePredictor
             backButton.Visible = false;
             submitButton.Visible = false;
             menuButton.Visible = false;
+            usersComboBox.Visible = false;
         }
 
         private void fixturesButton_Click(object sender, EventArgs e)
@@ -208,6 +209,7 @@ namespace ScorePredictor
             submitButton.Visible = false;
             menuButton.Visible = false;
             tableUsercontrol.Visible = false;
+            usersComboBox.Visible = false;
 
             if (predictionsUserControl != null)
             {
@@ -223,15 +225,28 @@ namespace ScorePredictor
             
             try
             {
-                
+                var app = AppController.Instance;
+                var CurrentUserId = app.getCurrentUser().UserID;
                 var fb = new FixtureBuilder();
-                var predictionsList = fb.getPredictions();
+                var CurrentUserName = fb.getUsername(CurrentUserId);
+                var predictionsList = fb.getPredictions(CurrentUserId);
+                var usersSubmitted = fb.usersSubmitted();
+
+                usersComboBox.Items.Clear();
+
+                foreach (String u in usersSubmitted)
+                {
+                    usersComboBox.Items.Add(u);
+                }
+
+                usersComboBox.SelectedIndex = usersComboBox.FindStringExact(CurrentUserName);
 
                 if (predictionsList.Count > 0)
                 {
-                    predictionsUserControl = new PredictionUserControl(predictionsList);
+                    predictionsUserControl.Update(predictionsList);
                     mainPanel.Controls.Add(predictionsUserControl);
 
+                    usersComboBox.Visible = true;
                     backButton.Visible = false;
                     nextButton.Visible = false;
                     submitButton.Visible = false;
@@ -250,6 +265,19 @@ namespace ScorePredictor
                 displayMessage("Your predictions for this week are currently unavailable.");
                 tablePanel.Visible = true;
             }
+
+            ResumeLayout();
+        }
+
+        private void usersComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SuspendLayout();
+            
+            var fb = new FixtureBuilder();
+            var UserId = fb.getUserId(usersComboBox.SelectedItem.ToString());
+            var predictionsList = fb.getPredictions(UserId);
+
+            predictionsUserControl.Update(predictionsList);
 
             ResumeLayout();
         }
