@@ -11,6 +11,7 @@ namespace ScorePredictor
         private int listSize;
         private AppController app = AppController.Instance;
         private PointsTableUserControl tableUsercontrol = new PointsTableUserControl();
+        private PredictionUserControl predictionsUserControl;
 
         public MainForm()
         {
@@ -19,7 +20,6 @@ namespace ScorePredictor
             backButton.Visible = false;
             submitButton.Visible = false;
             menuButton.Visible = false;
-            settingsButton.Enabled = false;
         }
 
         private void fixturesButton_Click(object sender, EventArgs e)
@@ -87,6 +87,7 @@ namespace ScorePredictor
                 tableUsercontrol.Add(pointsUserControl, 0);
             }
             
+            tableUsercontrol.Visible = true;
         }
 
         private void nextButton_Click(object sender, EventArgs e)
@@ -207,7 +208,52 @@ namespace ScorePredictor
             submitButton.Visible = false;
             menuButton.Visible = false;
             tableUsercontrol.Visible = false;
-            tablePanel.Visible = true;
+
+            if (predictionsUserControl != null)
+            {
+                predictionsUserControl.Visible = false;
+            }
+            
+            tablePanel.Visible = true;            
         }
+
+        private void myPredictionsButton_Click(object sender, EventArgs e)
+        {
+            SuspendLayout();
+            
+            try
+            {
+                
+                var fb = new FixtureBuilder();
+                var predictionsList = fb.getPredictions();
+
+                if (predictionsList.Count > 0)
+                {
+                    predictionsUserControl = new PredictionUserControl(predictionsList);
+                    mainPanel.Controls.Add(predictionsUserControl);
+
+                    backButton.Visible = false;
+                    nextButton.Visible = false;
+                    submitButton.Visible = false;
+                    menuButton.Visible = true;
+                    tableUsercontrol.Visible = false;
+                    tablePanel.Visible = false;
+                    predictionsUserControl.Visible = true;
+                }
+                else
+                {
+                    displayMessage("Your predictions for this week are currently unavailable.");
+                }
+            }
+            catch (Exception ex)
+            {
+                displayMessage("Your predictions for this week are currently unavailable.");
+                tablePanel.Visible = true;
+            }
+
+            ResumeLayout();
+        }
+
+       
     }
 }

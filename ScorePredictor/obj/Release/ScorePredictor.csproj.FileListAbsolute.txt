@@ -1,6 +1,8 @@
 C:\Source\Github\ScorePredictor\ScorePredictor\bin\Release\ScorePredictor.exe.config
 C:\Source\Github\ScorePredictor\ScorePredictor\bin\Release\ScorePredictor.exe
 C:\Source\Github\ScorePredictor\ScorePredictor\bin\Release\ScorePredictor.pdb
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Release\Newtonsoft.Json.dll
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Release\Newtonsoft.Json.xml
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.FixtureBox.resources
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.FixtureBoxUserControl.resources
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.LoginForm.resources
@@ -13,4 +15,9 @@ C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.Regist
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.csproj.GenerateResource.Cache
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.exe
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.pdb
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Release\ScorePredictor.exe.manifest
+C:\Source\Github\ScorePredictor\ScorePredictor\bin\Release\ScorePredictor.application
 C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.csprojResolveAssemblyReference.cache
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.PredictionUserControl.resources
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.exe.manifest
+C:\Source\Github\ScorePredictor\ScorePredictor\obj\Release\ScorePredictor.application

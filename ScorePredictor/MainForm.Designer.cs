@@ -35,7 +35,7 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.tablePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.settingsButton = new System.Windows.Forms.Button();
+            this.myPredictionsButton = new System.Windows.Forms.Button();
             this.statsButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.fixturesButton = new System.Windows.Forms.Button();
@@ -114,7 +114,7 @@
             this.tablePanel.ColumnCount = 2;
             this.tablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanel.Controls.Add(this.settingsButton, 0, 1);
+            this.tablePanel.Controls.Add(this.myPredictionsButton, 0, 1);
             this.tablePanel.Controls.Add(this.statsButton, 1, 0);
             this.tablePanel.Controls.Add(this.exitButton, 1, 1);
             this.tablePanel.Controls.Add(this.fixturesButton, 0, 0);
@@ -128,18 +128,19 @@
             this.tablePanel.Size = new System.Drawing.Size(734, 349);
             this.tablePanel.TabIndex = 0;
             // 
-            // settingsButton
+            // myPredictionsButton
             // 
-            this.settingsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.settingsButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.settingsButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settingsButton.Location = new System.Drawing.Point(83, 211);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(200, 100);
-            this.settingsButton.TabIndex = 2;
-            this.settingsButton.Text = "Settings";
-            this.settingsButton.UseVisualStyleBackColor = false;
+            this.myPredictionsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.myPredictionsButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.myPredictionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.myPredictionsButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myPredictionsButton.Location = new System.Drawing.Point(83, 211);
+            this.myPredictionsButton.Name = "myPredictionsButton";
+            this.myPredictionsButton.Size = new System.Drawing.Size(200, 100);
+            this.myPredictionsButton.TabIndex = 2;
+            this.myPredictionsButton.Text = "My Predictions";
+            this.myPredictionsButton.UseVisualStyleBackColor = false;
+            this.myPredictionsButton.Click += new System.EventHandler(this.myPredictionsButton_Click);
             // 
             // statsButton
             // 
@@ -192,6 +193,8 @@
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Score Predictor";
@@ -206,7 +209,7 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.TableLayoutPanel tablePanel;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button myPredictionsButton;
         private System.Windows.Forms.Button statsButton;
         private System.Windows.Forms.Button fixturesButton;
         private System.Windows.Forms.Button nextButton;

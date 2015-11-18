@@ -123,25 +123,55 @@ namespace ScorePredictor
         {
             var client = new WebClient();
             var reply = client.DownloadString("http://www.cgtipster.com/api2/PYBWeeklyStats.php");
-            var f = JsonConvert.DeserializeObject<UserList>(reply);
+            var f = JsonConvert.DeserializeObject<UserList>(reply, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+           
             
             //var fileReader = File.ReadAllText("JSONexample - stats.txt");
             //var f = JsonConvert.DeserializeObject<UserList>(fileReader);
-
-            return f.stock.ToDictionary(user => user.name, user => user.weekScore);
-            
+            if (f == null)
+            { 
+                return new Dictionary<string,int>();
+            }
+            else
+            {
+                return f.stock.ToDictionary(user => user.name, user => user.weekScore);
+            }
         }
 
         public Dictionary<string, int> getTotalStats() 
         {
             var client = new WebClient();
             var reply = client.DownloadString("http://www.cgtipster.com/api2/PYBTotalStats.php");
-            var f = JsonConvert.DeserializeObject<UserList>(reply);
+            var f = JsonConvert.DeserializeObject<UserList>(reply, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             //var fileReader = File.ReadAllText("JSONexample - stats.txt");
             //var f = JsonConvert.DeserializeObject<UserList>(fileReader);
 
             return f.stock.ToDictionary(user => user.name, user => user.totalScore);
+        }
+
+        public List<Prediction> getPredictions()
+        {
+            var client = new WebClient();
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBPredictions.php");
+
+            //var fileReader = File.ReadAllText("JSONexample - predictions.txt");
+            //var f = JsonConvert.DeserializeObject<PredictionList>(fileReader);
+
+            var f = JsonConvert.DeserializeObject<PredictionList>(reply);
+
+            var app = AppController.Instance;
+            var PredictionList = new List<Prediction>();
+            var CurrentUser = app.getCurrentUser();
+            
+            foreach (Prediction p in f.stock)
+            {
+                if (p.userId == CurrentUser.UserID)
+                {
+                    PredictionList.Add(p);
+                }
+            }
+            return PredictionList;
         }
 
     }
