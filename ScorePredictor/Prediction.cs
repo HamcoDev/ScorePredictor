@@ -11,7 +11,7 @@ namespace ScorePredictor
         public int userId { get; set; }
         public string homeTeam { get; set; }
         public int homeScore { get; set; }
-        public string awayTeam { get; set; }
         public int awayScore { get; set; }
+        public string awayTeam { get; set; }
     }
 }

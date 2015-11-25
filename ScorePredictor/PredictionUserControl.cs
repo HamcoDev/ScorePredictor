@@ -23,9 +23,13 @@ namespace ScorePredictor
             dataGridView.DataSource = predictions;
             dataGridView.RowTemplate.Height = this.Height / 10;
             dataGridView.Columns[1].HeaderText = "Home Team";
+            dataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView.Columns[2].HeaderText = "";
-            dataGridView.Columns[3].HeaderText = "Away Team";
-            dataGridView.Columns[4].HeaderText = "";
+            dataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns[3].HeaderText = "";
+            dataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns[4].HeaderText = "Away Team";
+            dataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView.Columns[0].Visible = false;
         }
     }

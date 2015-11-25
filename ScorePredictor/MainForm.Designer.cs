@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.usersComboBox = new System.Windows.Forms.ComboBox();
             this.menuButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.statsButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.fixturesButton = new System.Windows.Forms.Button();
-            this.usersComboBox = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,16 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(734, 421);
             this.mainPanel.TabIndex = 0;
+            // 
+            // usersComboBox
+            // 
+            this.usersComboBox.FormattingEnabled = true;
+            this.usersComboBox.ItemHeight = 13;
+            this.usersComboBox.Location = new System.Drawing.Point(469, 356);
+            this.usersComboBox.Name = "usersComboBox";
+            this.usersComboBox.Size = new System.Drawing.Size(193, 21);
+            this.usersComboBox.TabIndex = 7;
+            this.usersComboBox.SelectedIndexChanged += new System.EventHandler(this.usersComboBox_SelectedIndexChanged);
             // 
             // menuButton
             // 
@@ -140,7 +150,7 @@
             this.myPredictionsButton.Name = "myPredictionsButton";
             this.myPredictionsButton.Size = new System.Drawing.Size(200, 100);
             this.myPredictionsButton.TabIndex = 2;
-            this.myPredictionsButton.Text = "My Predictions";
+            this.myPredictionsButton.Text = "Predictions";
             this.myPredictionsButton.UseVisualStyleBackColor = false;
             this.myPredictionsButton.Click += new System.EventHandler(this.myPredictionsButton_Click);
             // 
@@ -185,16 +195,6 @@
             this.fixturesButton.Text = "Fixtures";
             this.fixturesButton.UseVisualStyleBackColor = false;
             this.fixturesButton.Click += new System.EventHandler(this.fixturesButton_Click);
-            // 
-            // usersComboBox
-            // 
-            this.usersComboBox.FormattingEnabled = true;
-            this.usersComboBox.ItemHeight = 13;
-            this.usersComboBox.Location = new System.Drawing.Point(469, 356);
-            this.usersComboBox.Name = "usersComboBox";
-            this.usersComboBox.Size = new System.Drawing.Size(193, 21);
-            this.usersComboBox.TabIndex = 7;
-            this.usersComboBox.SelectedIndexChanged += new System.EventHandler(this.usersComboBox_SelectedIndexChanged);
             // 
             // MainForm
             // 

@@ -46,13 +46,13 @@ namespace ScorePredictor
 
         public List<string> usersSubmitted()
         {
-            //var client = new WebClient();
-            //var reply = client.DownloadString("http://cgtipster.com/api2/PYBWhoBet.php");
+            var client = new WebClient();
+            var reply = client.DownloadString("http://cgtipster.com/api2/PYBWhoBet.php");
 
-            var fileReader = File.ReadAllText("JSONExample - UsersPredictions.txt");
-            var f = JsonConvert.DeserializeObject<UserList>(fileReader);
+            //var fileReader = File.ReadAllText("JSONExample - UsersPredictions.txt");
+            //var f = JsonConvert.DeserializeObject<UserList>(fileReader);
             
-            ///var f = JsonConvert.DeserializeObject<UserList>(reply);
+            var f = JsonConvert.DeserializeObject<UserList>(reply);
 
             var list = new List<string>();
 
