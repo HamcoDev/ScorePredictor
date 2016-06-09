@@ -23,7 +23,6 @@ namespace ScorePredictor
             this.homeBadgeBox.Image = homeTeamImage;
             this.awayBadgeBox.Image = awayTeamImage;
             this.fixtureId = fixtureId;
-
         }
 
         public int getHomeScore()
@@ -60,5 +59,11 @@ namespace ScorePredictor
         {
             awayScoreTextBox.SelectAll();
         }
+
+        private void homeScoreTextBox_TextChanged(object sender, EventArgs e)
+        {
+            awayScoreTextBox.SelectAll();
+        }
+
     }
 }

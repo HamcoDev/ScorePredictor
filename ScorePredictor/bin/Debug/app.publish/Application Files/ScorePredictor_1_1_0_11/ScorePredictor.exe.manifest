@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ScorePredictor.exe" version="1.1.0.11" publicKeyToken="96531d30d782bd41" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="resources\sp_icon_transparent_green_ayE_icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ScorePredictor" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ScorePredictor.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="520192">
+      <assemblyIdentity name="Newtonsoft.Json" version="7.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nsosXtGHteExnDWaq/g4KZITHv4YVLiZwjqT/iJ0luM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScorePredictor.exe" size="1301440">
+      <assemblyIdentity name="ScorePredictor" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>UhtBIHNCi7jcxqzwSF6zGKT9R/nexThqtOjVX/hB5ro=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="resources\sp_icon_transparent_green_ayE_icon.ico" size="42340">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tWyl6nrKE+HXoVean6EyFC7G5LcgwAMirJ+GpV+xnQE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="ScorePredictor.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ADASTRA\hamptons" issuerKeyHash="abe18d652cafabf18f00d03c47214ffad3744c75" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>juLHSV7WogkYyiSlAkT8GwmwsWH1MaBEG9C5POWVbHs=</DigestValue></Reference></SignedInfo><SignatureValue>OBKW5KMQn203vdF5vlRhFUJ2UzIao/J5fMJsufxXF47bPQ7CRJrUGCi8OqrYES1g9Gr+AX7g88Jz1Ea2rRI63NgB/wUvo4ZzSB7BXysjM4btlTzniLUYDvShAgmqgPZXTeed4trJ6tpc7MXBBqjVE55CDcwrDawwAebYy1lDNVY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ivbvn8ojLsBKVdrFgm++zq3kPWugPvvUrB5cYZMzUKfel3fCYX4spCViLYGuHBLloEc9yINvaB+ZVR/Bn71OFqBgJIpY3qs+wjXG2psS+mwpjLNOwAbfJdgRYOA5LKZO0TrMGg/GGBWgVEevv+SMi8PYZHWuqADIFzz5oDYbHk8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="7b6c95e53cb9d01b44a031f561b1b0091bfc4402a524ca1809a2d65e49c7e28e" Description="" Url=""><as:assemblyIdentity name="ScorePredictor.exe" version="1.1.0.11" publicKeyToken="96531d30d782bd41" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ADASTRA\hamptons</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>UZOp9n6C3KMeM8XJRsZ2MM6rffiXBEq19bKkTAPhdsE=</DigestValue></Reference></SignedInfo><SignatureValue>GRqJeYsCsdrWI+B9F5CN6foLsur0MH+q84UZb3siAJuB+IakQolzvnhHpyql3fmeIAsD5jBSOA5CKThAAJy7Fj1x/YMT0+YyOxK0r6ABt54omV0qyFvFtBMyLRrhr87HsQQxE5QJ40sK9b15WLtyUewtMRGgmyblp9hQz12Nc/Q=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ivbvn8ojLsBKVdrFgm++zq3kPWugPvvUrB5cYZMzUKfel3fCYX4spCViLYGuHBLloEc9yINvaB+ZVR/Bn71OFqBgJIpY3qs+wjXG2psS+mwpjLNOwAbfJdgRYOA5LKZO0TrMGg/GGBWgVEevv+SMi8PYZHWuqADIFzz5oDYbHk8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQPARo1Rvgq4hKx3gT0pQ6uzANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAAQQBEAEEAUwBUAFIAQQBcAGgAYQBtAHAAdABvAG4AczAeFw0xNTExMTAxOTU2NDRaFw0xNjExMTAwMTU2NDRaMCsxKTAnBgNVBAMeIABBAEQAQQBTAFQAUgBBAFwAaABhAG0AcAB0AG8AbgBzMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCK9u+fyiMuwEpV2sWCb77OreQ9a6A++9SsHlxhkzNQp96Xd8JhfiykJWItga4cEuWgRz3Ig29oH5lVH8GfvU4WoGAkiljeqz7CNcbamxL6bCmMs07ABt8l2BFg4Dkspk7ROswaD8YYFaBUR6+/5IyLw9hkda6oAMgXPPmgNhseTwIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAHV7sq06+QacV6kqXqBw/E5dgv/Y6drh5kZGwC2UotGN97qXUeN39R08hVPlRr+OqvcmamxHEnRME+VZGy/FRpJMpPPG3d0sjE3Uc1Ro35oLIYiyF3AdkY2t/fxsDQSaV1MZbfvJCl/tRApQrXUUxTLtjNBLxMtHMgyj/TOdMWjT</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

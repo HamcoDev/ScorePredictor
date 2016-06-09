@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.nameLabel = new System.Windows.Forms.Label();
-            this.pointsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -44,23 +43,11 @@
             this.nameLabel.Text = "Name";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pointsLabel
-            // 
-            this.pointsLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pointsLabel.ForeColor = System.Drawing.Color.White;
-            this.pointsLabel.Location = new System.Drawing.Point(463, 0);
-            this.pointsLabel.Name = "pointsLabel";
-            this.pointsLabel.Size = new System.Drawing.Size(257, 38);
-            this.pointsLabel.TabIndex = 1;
-            this.pointsLabel.Text = "Points";
-            this.pointsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // PointsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.Controls.Add(this.pointsLabel);
             this.Controls.Add(this.nameLabel);
             this.Name = "PointsUserControl";
             this.Size = new System.Drawing.Size(720, 40);
@@ -71,7 +58,6 @@
         #endregion
 
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label pointsLabel;
 
     }
 }

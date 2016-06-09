@@ -199,4 +199,79 @@
   <data name="stadium" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\stadium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Alb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Alb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Aus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Bel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Cro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CzR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\CzR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Eng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Fra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Ger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Hun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Ice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Ire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Ita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\NI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Pol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Por" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Por.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Rom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Rus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Slo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Spa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Swe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Swe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Swi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Swi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Tur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ukr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Ukr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Badges\Euro2016\Wal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="euro_2016" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\euro-2016.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

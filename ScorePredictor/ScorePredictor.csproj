@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://hamcodev.com/httpdocs/ScorePredictor/</PublishUrl>
+    <PublishUrl>ftp://waws-prod-sn1-021.ftp.azurewebsites.windows.net/site/wwwroot/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -22,10 +22,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.hamcodev.com/ScorePredictor/</InstallUrl>
+    <InstallUrl>http://speuro2016.azurewebsites.net/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -296,6 +296,81 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Alb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Aus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Bel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Cro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\CzR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Eng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Fra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Ger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Hun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Ice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Ire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Ita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\NI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Pol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Por.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Rom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Rus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Slo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Spa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Swe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Swi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Tur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Ukr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Badges\Euro2016\Wal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\euro-2016.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

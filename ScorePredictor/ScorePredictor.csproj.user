@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>ftp://hamcodev.com/httpdocs/ScorePredictor/|http://www.hamcodev.com/ScorePredictor/|publish\</PublishUrlHistory>
-    <InstallUrlHistory>http://www.hamcodev.com/ScorePredictor/</InstallUrlHistory>
+    <PublishUrlHistory>ftp://waws-prod-sn1-021.ftp.azurewebsites.windows.net/site/wwwroot/|ftp://waws-prod-sn1-021.ftp.azurewebsites.windows.net/|ftp://ftp.cgtipster.com/score_predictor/|ftp://ftp.cgtipster.com/|ftp.cgtipster.com\</PublishUrlHistory>
+    <InstallUrlHistory>http://speuro2016.azurewebsites.net/|http://www.cgtipster.com/score_predictor/|http://www.cgtipster.com/|http://www.hamcodev.com/ScorePredictor/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />

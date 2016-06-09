@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixtureBox));
             this.fixturesPanel = new System.Windows.Forms.Panel();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.homeLabel = new System.Windows.Forms.Label();
-            this.awayLabel = new System.Windows.Forms.Label();
-            this.vsLabel = new System.Windows.Forms.Label();
-            this.homeBadgeBox = new System.Windows.Forms.PictureBox();
-            this.awayBadgeBox = new System.Windows.Forms.PictureBox();
-            this.homeScoreTextBox = new System.Windows.Forms.TextBox();
             this.awayScoreTextBox = new System.Windows.Forms.PictureBox();
+            this.homeScoreTextBox = new System.Windows.Forms.TextBox();
+            this.awayBadgeBox = new System.Windows.Forms.PictureBox();
+            this.homeBadgeBox = new System.Windows.Forms.PictureBox();
+            this.vsLabel = new System.Windows.Forms.Label();
+            this.awayLabel = new System.Windows.Forms.Label();
+            this.homeLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
             this.fixturesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homeBadgeBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.awayBadgeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.awayScoreTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.awayBadgeBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeBadgeBox)).BeginInit();
             this.SuspendLayout();
             // 
             // fixturesPanel
@@ -61,26 +61,50 @@
             this.fixturesPanel.Size = new System.Drawing.Size(734, 421);
             this.fixturesPanel.TabIndex = 0;
             // 
-            // dateLabel
+            // awayScoreTextBox
             // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.ForeColor = System.Drawing.Color.White;
-            this.dateLabel.Location = new System.Drawing.Point(363, 89);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(30, 13);
-            this.dateLabel.TabIndex = 0;
-            this.dateLabel.Text = "Date";
+            this.awayScoreTextBox.BackColor = System.Drawing.Color.White;
+            this.awayScoreTextBox.ErrorImage = null;
+            this.awayScoreTextBox.Location = new System.Drawing.Point(387, 142);
+            this.awayScoreTextBox.Name = "awayScoreTextBox";
+            this.awayScoreTextBox.Size = new System.Drawing.Size(40, 40);
+            this.awayScoreTextBox.TabIndex = 9;
+            this.awayScoreTextBox.TabStop = false;
             // 
-            // homeLabel
+            // homeScoreTextBox
             // 
-            this.homeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeLabel.Location = new System.Drawing.Point(84, 152);
-            this.homeLabel.Name = "homeLabel";
-            this.homeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.homeLabel.Size = new System.Drawing.Size(200, 21);
-            this.homeLabel.TabIndex = 1;
-            this.homeLabel.Text = "Home";
-            this.homeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.homeScoreTextBox.BackColor = System.Drawing.Color.White;
+            this.homeScoreTextBox.Location = new System.Drawing.Point(313, 142);
+            this.homeScoreTextBox.Multiline = true;
+            this.homeScoreTextBox.Name = "homeScoreTextBox";
+            this.homeScoreTextBox.Size = new System.Drawing.Size(40, 40);
+            this.homeScoreTextBox.TabIndex = 8;
+            // 
+            // awayBadgeBox
+            // 
+            this.awayBadgeBox.Location = new System.Drawing.Point(455, 227);
+            this.awayBadgeBox.Name = "awayBadgeBox";
+            this.awayBadgeBox.Size = new System.Drawing.Size(40, 40);
+            this.awayBadgeBox.TabIndex = 7;
+            this.awayBadgeBox.TabStop = false;
+            // 
+            // homeBadgeBox
+            // 
+            this.homeBadgeBox.Location = new System.Drawing.Point(244, 227);
+            this.homeBadgeBox.Name = "homeBadgeBox";
+            this.homeBadgeBox.Size = new System.Drawing.Size(40, 40);
+            this.homeBadgeBox.TabIndex = 6;
+            this.homeBadgeBox.TabStop = false;
+            // 
+            // vsLabel
+            // 
+            this.vsLabel.AutoSize = true;
+            this.vsLabel.Location = new System.Drawing.Point(363, 190);
+            this.vsLabel.Name = "vsLabel";
+            this.vsLabel.Size = new System.Drawing.Size(18, 13);
+            this.vsLabel.TabIndex = 4;
+            this.vsLabel.Text = "vs";
+            this.vsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // awayLabel
             // 
@@ -94,50 +118,26 @@
             this.awayLabel.Text = "Away";
             this.awayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // vsLabel
+            // homeLabel
             // 
-            this.vsLabel.AutoSize = true;
-            this.vsLabel.Location = new System.Drawing.Point(363, 190);
-            this.vsLabel.Name = "vsLabel";
-            this.vsLabel.Size = new System.Drawing.Size(18, 13);
-            this.vsLabel.TabIndex = 4;
-            this.vsLabel.Text = "vs";
-            this.vsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.homeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeLabel.Location = new System.Drawing.Point(84, 152);
+            this.homeLabel.Name = "homeLabel";
+            this.homeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.homeLabel.Size = new System.Drawing.Size(200, 21);
+            this.homeLabel.TabIndex = 1;
+            this.homeLabel.Text = "Home";
+            this.homeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // homeBadgeBox
+            // dateLabel
             // 
-            this.homeBadgeBox.Location = new System.Drawing.Point(244, 227);
-            this.homeBadgeBox.Name = "homeBadgeBox";
-            this.homeBadgeBox.Size = new System.Drawing.Size(40, 40);
-            this.homeBadgeBox.TabIndex = 6;
-            this.homeBadgeBox.TabStop = false;
-            // 
-            // awayBadgeBox
-            // 
-            this.awayBadgeBox.Location = new System.Drawing.Point(455, 227);
-            this.awayBadgeBox.Name = "awayBadgeBox";
-            this.awayBadgeBox.Size = new System.Drawing.Size(40, 40);
-            this.awayBadgeBox.TabIndex = 7;
-            this.awayBadgeBox.TabStop = false;
-            // 
-            // homeScoreTextBox
-            // 
-            this.homeScoreTextBox.BackColor = System.Drawing.Color.White;
-            this.homeScoreTextBox.Location = new System.Drawing.Point(313, 142);
-            this.homeScoreTextBox.Multiline = true;
-            this.homeScoreTextBox.Name = "homeScoreTextBox";
-            this.homeScoreTextBox.Size = new System.Drawing.Size(40, 40);
-            this.homeScoreTextBox.TabIndex = 8;
-            // 
-            // awayScoreTextBox
-            // 
-            this.awayScoreTextBox.BackColor = System.Drawing.Color.White;
-            this.awayScoreTextBox.ErrorImage = null;
-            this.awayScoreTextBox.Location = new System.Drawing.Point(387, 142);
-            this.awayScoreTextBox.Name = "awayScoreTextBox";
-            this.awayScoreTextBox.Size = new System.Drawing.Size(40, 40);
-            this.awayScoreTextBox.TabIndex = 9;
-            this.awayScoreTextBox.TabStop = false;
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.ForeColor = System.Drawing.Color.White;
+            this.dateLabel.Location = new System.Drawing.Point(363, 89);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(30, 13);
+            this.dateLabel.TabIndex = 0;
+            this.dateLabel.Text = "Date";
             // 
             // FixtureBox
             // 
@@ -152,9 +152,9 @@
             this.Text = "FixtureBox";
             this.fixturesPanel.ResumeLayout(false);
             this.fixturesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homeBadgeBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.awayBadgeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.awayScoreTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.awayBadgeBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeBadgeBox)).EndInit();
             this.ResumeLayout(false);
 
         }

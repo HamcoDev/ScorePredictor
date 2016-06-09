@@ -20,7 +20,7 @@ namespace ScorePredictor
         public void setUserPoints(string username, string points)
         {
             nameLabel.Text = username;
-            pointsLabel.Text = points;
+            //pointsLabel.Text = points;
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)

@@ -96,5 +96,92 @@ namespace ScorePredictor
 
         }
 
+        public static Image getCountryFlag(string country)
+        {
+            Image flag = ScorePredictor.Properties.Resources.icon2;
+            switch (country)
+            {
+                case "Albania":
+                    flag = ScorePredictor.Properties.Resources.Alb;
+                    break;
+                case "Austria":
+                    flag = ScorePredictor.Properties.Resources.Aus;
+                    break;
+                case "Belgium":
+                    flag = ScorePredictor.Properties.Resources.Bel;
+                    break;
+                case "Croatia":
+                    flag = ScorePredictor.Properties.Resources.Cro;
+                    break;
+                case "Czech Republic":
+                    flag = ScorePredictor.Properties.Resources.CzR;
+                    break;
+                case "England":
+                    flag = ScorePredictor.Properties.Resources.Eng;
+                    break;
+                case "France":
+                    flag = ScorePredictor.Properties.Resources.Fra;
+                    break;
+                case "Germany":
+                    flag = ScorePredictor.Properties.Resources.Ger;
+                    break;
+                case "Hungary":
+                    flag = ScorePredictor.Properties.Resources.Hun;
+                    break;
+                case "Iceland":
+                    flag = ScorePredictor.Properties.Resources.Ice;
+                    break;
+                case "Ireland":
+                    flag = ScorePredictor.Properties.Resources.Ire;
+                    break;
+                case "Italy":
+                    flag = ScorePredictor.Properties.Resources.Ita;
+                    break;
+                case "N.Ireland":
+                    flag = ScorePredictor.Properties.Resources.NI;
+                    break;
+                case "Poland":
+                    flag = ScorePredictor.Properties.Resources.Pol;
+                    break;
+                case "Portugal":
+                    flag = ScorePredictor.Properties.Resources.Por;
+                    break;
+                case "Romania":
+                    flag = ScorePredictor.Properties.Resources.Rom;
+                    break;
+                case "Russia":
+                    flag = ScorePredictor.Properties.Resources.Rus;
+                    break;
+                case "Slovakia":
+                    flag = ScorePredictor.Properties.Resources.Slo;
+                    break;
+                case "Spain":
+                    flag = ScorePredictor.Properties.Resources.Spa;
+                    break;
+                case "Sweden":
+                    flag = ScorePredictor.Properties.Resources.Swe;
+                    break;
+                case "Switzerland":
+                    flag = ScorePredictor.Properties.Resources.Swi;
+                    break;
+                case "Turkey":
+                    flag = ScorePredictor.Properties.Resources.Tur;
+                    break;
+                case "Ukraine":
+                    flag = ScorePredictor.Properties.Resources.Ukr;
+                    break;
+                case "Wales":
+                    flag = ScorePredictor.Properties.Resources.Wal;
+                    break;
+                default:
+                    flag = ScorePredictor.Properties.Resources.icon2;
+
+                    break;
+            }
+
+            return flag;
+
+        }
+
     }
 }

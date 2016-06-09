@@ -59,36 +59,45 @@ namespace ScorePredictor
             var weekStats = fb.getWeekStats();
             var totalStats = fb.getTotalStats();
 
-            tablePanel.Visible = false;
-            submitButton.Visible = false;
-            backButton.Enabled = false;
-
-            try
+            if (weekStats.Count < 1 || totalStats.Count < 1)
             {
-                fixtureBoxList[fix].Visible = false;
+                MessageBox.Show("There are no stats to display.");
             }
-            catch (Exception ex){}
-            nextButton.Visible = false;
-            backButton.Visible = false;
-            menuButton.Visible = true;
-
-            mainPanel.Controls.Add(tableUsercontrol);
-
-            foreach (KeyValuePair<string, int> user in weekStats)
+            else
             {
-                var pointsUserControl = new PointsUserControl();
-                pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
-                tableUsercontrol.Add(pointsUserControl, 1);
-            }
+                tablePanel.Visible = false;
+                submitButton.Visible = false;
+                backButton.Enabled = false;
 
-            foreach (KeyValuePair<string, int> user in totalStats)
-            {
-                var pointsUserControl = new PointsUserControl();
-                pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
-                tableUsercontrol.Add(pointsUserControl, 0);
+                try
+                {
+                    fixtureBoxList[fix].Visible = false;
+                }
+                catch (Exception) { }
+
+                nextButton.Visible = false;
+                backButton.Visible = false;
+                menuButton.Visible = true;
+
+                mainPanel.Controls.Add(tableUsercontrol);
+
+                foreach (KeyValuePair<string, int> user in weekStats)
+                {
+                    var pointsUserControl = new PointsUserControl();
+                    pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
+                    tableUsercontrol.Add(pointsUserControl, 1);
+                }
+
+                foreach (KeyValuePair<string, int> user in totalStats)
+                {
+                    var pointsUserControl = new PointsUserControl();
+                    pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
+                    tableUsercontrol.Add(pointsUserControl, 0);
+                }
+
+                tableUsercontrol.Visible = true;
             }
             
-            tableUsercontrol.Visible = true;
         }
 
         private void nextButton_Click(object sender, EventArgs e)
@@ -137,6 +146,20 @@ namespace ScorePredictor
                 backButton.Enabled = true;
                 backButton.Visible = true;
                 nextButton.Visible = false;
+//                submitButton.Text = <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+//<input type="hidden" name="cmd" value="_xclick">
+//<input type="hidden" name="business" value="coleburg76@hotmail.com">
+//<input type="hidden" name="lc" value="GB">
+//<input type="hidden" name="item_name" value="Enter Predictions">
+//<input type="hidden" name="amount" value="1.00">
+//<input type="hidden" name="currency_code" value="GBP">
+//<input type="hidden" name="button_subtype" value="services">
+//<input type="hidden" name="no_note" value="0">
+//<input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_LG.gif:NonHostedGuest">
+//<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+//<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+//</form>;
+
                 submitButton.Visible = true;
                 submitButton.Enabled = true;
             }
@@ -160,6 +183,8 @@ namespace ScorePredictor
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            var paymentMade = false;
+
             try
             {
                 app.submitPredictions();
@@ -257,7 +282,7 @@ namespace ScorePredictor
                 }
                 else
                 {
-                    displayMessage("Your predictions for this week are currently unavailable.");
+                    displayMessage("Predictions currently unavailable. Are you sure you've submitted them?");
                 }
             }
             catch (Exception ex)

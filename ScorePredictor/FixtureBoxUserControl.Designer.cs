@@ -84,10 +84,11 @@
             // 
             // awayBadgeBox
             // 
+            this.awayBadgeBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.awayBadgeBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.awayBadgeBox.Location = new System.Drawing.Point(417, 85);
+            this.awayBadgeBox.Location = new System.Drawing.Point(411, 85);
             this.awayBadgeBox.Name = "awayBadgeBox";
-            this.awayBadgeBox.Size = new System.Drawing.Size(40, 40);
+            this.awayBadgeBox.Size = new System.Drawing.Size(48, 48);
             this.awayBadgeBox.TabIndex = 8;
             this.awayBadgeBox.TabStop = false;
             // 
@@ -95,7 +96,7 @@
             // 
             this.homeScoreTextBox.BackColor = System.Drawing.Color.White;
             this.homeScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.homeScoreTextBox.Location = new System.Drawing.Point(279, 158);
+            this.homeScoreTextBox.Location = new System.Drawing.Point(307, 158);
             this.homeScoreTextBox.Multiline = true;
             this.homeScoreTextBox.Name = "homeScoreTextBox";
             this.homeScoreTextBox.Size = new System.Drawing.Size(50, 50);
@@ -103,6 +104,7 @@
             this.homeScoreTextBox.Text = "0";
             this.homeScoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.homeScoreTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.homeScoreTextBox_MouseClick);
+            this.homeScoreTextBox.TextChanged += new System.EventHandler(this.homeScoreTextBox_TextChanged);
             // 
             // vsLabel
             // 
@@ -117,10 +119,11 @@
             // 
             // homeBadgeBox
             // 
+            this.homeBadgeBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.homeBadgeBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.homeBadgeBox.Location = new System.Drawing.Point(307, 85);
+            this.homeBadgeBox.Location = new System.Drawing.Point(294, 85);
             this.homeBadgeBox.Name = "homeBadgeBox";
-            this.homeBadgeBox.Size = new System.Drawing.Size(40, 40);
+            this.homeBadgeBox.Size = new System.Drawing.Size(48, 48);
             this.homeBadgeBox.TabIndex = 11;
             this.homeBadgeBox.TabStop = false;
             // 
@@ -128,7 +131,7 @@
             // 
             this.awayScoreTextBox.BackColor = System.Drawing.Color.White;
             this.awayScoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.awayScoreTextBox.Location = new System.Drawing.Point(417, 158);
+            this.awayScoreTextBox.Location = new System.Drawing.Point(395, 158);
             this.awayScoreTextBox.Multiline = true;
             this.awayScoreTextBox.Name = "awayScoreTextBox";
             this.awayScoreTextBox.Size = new System.Drawing.Size(50, 50);
@@ -152,6 +155,7 @@
             this.Controls.Add(this.dateLabel);
             this.Name = "FixtureBoxUserControl";
             this.Size = new System.Drawing.Size(734, 349);
+            this.Load += new System.EventHandler(this.homeScoreTextBox_GotFocus);
             ((System.ComponentModel.ISupportInitialize)(this.awayBadgeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBadgeBox)).EndInit();
             this.ResumeLayout(false);

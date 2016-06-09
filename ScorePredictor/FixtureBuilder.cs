@@ -126,18 +126,19 @@ namespace ScorePredictor
         {
             var client = new WebClient();
             var reply = client.DownloadString("http://www.cgtipster.com/api2/PYBWeeklyStats.php");
-            var f = JsonConvert.DeserializeObject<UserList>(reply, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-           
-            
+            var f = JsonConvert.DeserializeObject<UserList>(reply,
+                new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore});
+
+
             //var fileReader = File.ReadAllText("JSONexample - stats.txt");
             //var f = JsonConvert.DeserializeObject<UserList>(fileReader);
-            if (f == null)
-            { 
-                return new Dictionary<string,int>();
-            }
-            else
+            try
             {
                 return f.stock.ToDictionary(user => user.name, user => user.weekScore);
+            }
+            catch (Exception)
+            {
+                return new Dictionary<string, int>();
             }
         }
 
@@ -150,8 +151,15 @@ namespace ScorePredictor
             //var fileReader = File.ReadAllText("JSONexample - stats.txt");
             //var f = JsonConvert.DeserializeObject<UserList>(fileReader);
 
-            return f.stock.ToDictionary(user => user.name, user => user.totalScore);
-        }
+            try
+            {
+                return f.stock.ToDictionary(user => user.name, user => user.totalScore);
+            }
+            catch (Exception)
+            {
+                return new Dictionary<string, int>();
+            }
+          }
 
         public List<Prediction> getPredictions(int userId)
         {

@@ -53,30 +53,59 @@ namespace ScorePredictor
             fixtures = fb.getFixtures();
             fix = 0;
 
+            //for Premier League
+            //try
+            //{
+            //    foreach (Fixture Fixture in fixtures)
+            //    {
+            //        var usercontrol = new FixtureBoxUserControl(Fixture.ID, Fixture.Home_Team, Fixture.Away_Team, Fixture.Date,
+            //            Badges.getTeamBadge(Fixture.Home_Team), Badges.getTeamBadge(Fixture.Away_Team));
+            //        fixtureBoxList.Add(usercontrol);
+            //        fix = fix + 1;
+            //    }
+            //}
+            //catch (NullReferenceException ex)
+            //{
+            
+            //}
+
+            //for Euro 2016
             try
             {
                 foreach (Fixture Fixture in fixtures)
                 {
                     var usercontrol = new FixtureBoxUserControl(Fixture.ID, Fixture.Home_Team, Fixture.Away_Team, Fixture.Date,
-                        Badges.getTeamBadge(Fixture.Home_Team), Badges.getTeamBadge(Fixture.Away_Team));
+                        Badges.getCountryFlag(Fixture.Home_Team), Badges.getCountryFlag(Fixture.Away_Team));
                     fixtureBoxList.Add(usercontrol);
                     fix = fix + 1;
                 }
             }
             catch (NullReferenceException ex)
             {
-            
+
             }
 
-            if (fix != 10)
+            //    if (fix != 10)
+            //    {
+            //        fixtureBoxList.Clear();
+            //        MainForm.displayMessage("No fixtures available");
+            //        return fixtureBoxList;
+            //    }
+            //    else
+            //    {
+            //        fixtureBoxList[0].Visible = true;
+            //        return fixtureBoxList;
+            //    }
+
+            if (fix > 0)
             {
-                fixtureBoxList.Clear();
-                MainForm.displayMessage("No fixtures available");
+                fixtureBoxList[0].Visible = true;
                 return fixtureBoxList;
             }
             else
             {
-                fixtureBoxList[0].Visible = true;
+                fixtureBoxList.Clear();
+                MainForm.displayMessage("No fixtures available");
                 return fixtureBoxList;
             }
         }
