@@ -25,8 +25,8 @@
     <InstallUrl>http://speuro2016.azurewebsites.net/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
-    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -116,6 +116,12 @@
     </Compile>
     <Compile Include="PointsTableUserControl.Designer.cs">
       <DependentUpon>PointsTableUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OldPointsTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OldPointsTableUserControl.Designer.cs">
+      <DependentUpon>OldPointsTableUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="PointsUserControl.cs">
       <SubType>UserControl</SubType>

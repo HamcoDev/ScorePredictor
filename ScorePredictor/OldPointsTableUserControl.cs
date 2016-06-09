@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ScorePredictor
 {
-    public partial class PointsTableUserControl : UserControl
+    public partial class OldPointsTableUserControl : UserControl
     {
-        public PointsTableUserControl()
+        public OldPointsTableUserControl()
         {
             InitializeComponent();
             pointsTabControl.BackColor = Color.Transparent;

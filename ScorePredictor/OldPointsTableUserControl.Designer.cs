@@ -1,6 +1,6 @@
 ﻿namespace ScorePredictor
 {
-    partial class PointsTableUserControl
+    partial class OldPointsTableUserControl
     {
         /// <summary> 
         /// Required designer variable.

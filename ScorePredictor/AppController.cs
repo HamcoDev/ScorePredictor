@@ -80,7 +80,7 @@ namespace ScorePredictor
                     fix = fix + 1;
                 }
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
 
             }

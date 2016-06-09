@@ -36,7 +36,7 @@
             this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nameLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(110, 0);
+            this.nameLabel.Location = new System.Drawing.Point(194, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(347, 40);
             this.nameLabel.TabIndex = 0;

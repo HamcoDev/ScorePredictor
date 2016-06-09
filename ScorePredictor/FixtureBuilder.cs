@@ -65,7 +65,7 @@ namespace ScorePredictor
 
 
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
             }
             return list;

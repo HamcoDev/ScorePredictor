@@ -56,10 +56,11 @@ namespace ScorePredictor
         private void statsButton_Click(object sender, EventArgs e)
         {
             var fb = new FixtureBuilder();
-            var weekStats = fb.getWeekStats();
+            //var weekStats = fb.getWeekStats();
             var totalStats = fb.getTotalStats();
 
-            if (weekStats.Count < 1 || totalStats.Count < 1)
+            //if (weekStats.Count < 1 || totalStats.Count < 1)
+            if (totalStats.Count < 1)
             {
                 MessageBox.Show("There are no stats to display.");
             }
@@ -81,12 +82,14 @@ namespace ScorePredictor
 
                 mainPanel.Controls.Add(tableUsercontrol);
 
-                foreach (KeyValuePair<string, int> user in weekStats)
-                {
-                    var pointsUserControl = new PointsUserControl();
-                    pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
-                    tableUsercontrol.Add(pointsUserControl, 1);
-                }
+                //foreach (KeyValuePair<string, int> user in weekStats)
+                //{
+                //    var pointsUserControl = new PointsUserControl();
+                //    pointsUserControl.setUserPoints(user.Key + "    " + user.Value, user.Value.ToString());
+                //    tableUsercontrol.Add(pointsUserControl, 1);
+                //}
+
+                tableUsercontrol.RemoveAll();
 
                 foreach (KeyValuePair<string, int> user in totalStats)
                 {
@@ -183,7 +186,7 @@ namespace ScorePredictor
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            var paymentMade = false;
+            //var paymentMade = false;
 
             try
             {
@@ -285,7 +288,7 @@ namespace ScorePredictor
                     displayMessage("Predictions currently unavailable. Are you sure you've submitted them?");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 displayMessage("Your predictions for this week are currently unavailable.");
                 tablePanel.Visible = true;
